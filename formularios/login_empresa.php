@@ -39,7 +39,7 @@ else{
 	<input type="text" name="id"><br>
 	Senha:<br>
 	<input type="password" name="senha"><br>
-	<button type="submit"> Logar</button>
+	<button type="submit"> Logar</button>4
 
 
 </form>	

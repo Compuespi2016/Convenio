@@ -71,12 +71,10 @@ include_once('../db/conexao.php');
 	<button type="submit"> Enviar</button>
 
 
-<<<<<<< HEAD
 </form>
 
 
-=======
 </form>	
->>>>>>> f0f50f82b1214f2fda74adf316f8b077cc5f1d0d
+
 </body>
 </html>

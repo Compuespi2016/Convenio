@@ -2,7 +2,7 @@
 include_once('../db/conexao.php');
  $id = $_POST['id'];
  $senha = $_POST['senha'];
- $query = "SELECT * FROM user_empresa WHERE id = '$id' AND senha = '$senha' ";
+ $query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
  $sql =  mysqli_query($conecta,$query) or die(mysqli_error());
 
 $row = mysqli_num_rows($sql);
@@ -22,13 +22,13 @@ else{
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Login Preg</title>
 	<script type="text/javascript">
 		function loginsuccessfully(){
-			setTimeout("window.location = 'home.php'",1000);
+			setTimeout("window.location = 'home_preg.php'",1000);
 		}
 		function loginfailed(){
-			setTimeout("window.location = 'login_empresa.php'",1000);
+			setTimeout("window.location = 'login_preg.php'",1000);
 		}
 	</script>
 </head>
