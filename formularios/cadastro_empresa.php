@@ -18,7 +18,7 @@ include_once('../db/conexao.php');
 		if(mysqli_query($conecta,$query)){
 			echo "<center> Inserido .... </center>";
 			session_start();
-			$_SESSION['id'] = mysqli_query($conexao,"SELECT ID FROM user_empresa where nome = $nomemp");
+			$_SESSION['id'] = mysqli_insert_id($conecta);
 			echo "<script>loginsuccessfully()</script>";
 		}
 		else
