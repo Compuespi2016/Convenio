@@ -21,16 +21,14 @@
 			<script>document.getElementById('popup').style.display = 'flex'</script>
 <?php
 			session_start();
-<<<<<<< HEAD
+
 			$_SESSION['id'] = $id_empresa;
 			
 		}
 		else{
 			echo mysqli_error($conecta);
-=======
 			$_SESSION['id'] = mysqli_insert_id($conecta);
 			echo "<script>loginsuccessfully()</script>";
->>>>>>> 0a31c85a3c51b53c006a0b00c289f99d4cee0735
 		}
 	}
 
