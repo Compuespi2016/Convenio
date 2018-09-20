@@ -1,0 +1,16 @@
+div#popup{
+	width:200px;
+	height:80px;
+	background-color:crimson;
+}
+div#popup p{
+	color: white;
+	text-align:center;
+}
+div#popup p#alert{
+	color: white;
+	font-weight: bold;
+	font-size:20px;
+	text-align: center;
+
+}

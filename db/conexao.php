@@ -1,11 +1,13 @@
 <?php
-	$usuario = 'compuespi2016';
-	$senha = 'computacao';
-	$host = 'db4free.net';
-	$dbname = 'compuespi';
+	$usuario = 'root';
+	$senha = '';
+	$host = 'localhost';
+	$dbname = 'convenio';
 
 	$conecta = mysqli_connect($host,$usuario,$senha,$dbname);
 	
-	echo $conecta;
+	if(!$conecta){
+		echo 'erro';
+	}
 	
 ?>
