@@ -1,5 +1,5 @@
 <?php
-include_once('../db/conexao.php');
+	include_once('../db/conexao.php');
 	if(isset($_POST['nome'])){
 		$nomemp = $_POST['nome'];
 		$senha = $_POST['senha'];
@@ -12,20 +12,26 @@ include_once('../db/conexao.php');
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
-		$x = "{'nomeemp'}"
+		$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ('$nomemp','$senha','$cnpj','$cpf','$ramo','$enderecoemp','$telefonemp','$telefonedon','$email', '$nomeresp')";
+		$query = mysqli_query($conecta,$query);
 
-
-		$query = "insert into user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) values ({$nomemp},{$senha},{$cnpj},{$cpf},{$ramo},{$enderecoemp},{$telefonemp},{$telefonedon},{$email}, {$nomeresp})";
-
-		if(mysqli_query($conecta,$query)){
-			echo "<center> Inserido .... </center>";
+		$id_empresa = mysqli_insert_id($conecta);
+		if($query){
+?>
+			<script>document.getElementById('popup').style.display = 'flex'</script>
+<?php
 			session_start();
+<<<<<<< HEAD
+			$_SESSION['id'] = $id_empresa;
+			
+		}
+		else{
+			echo mysqli_error($conecta);
+=======
 			$_SESSION['id'] = mysqli_insert_id($conecta);
 			echo "<script>loginsuccessfully()</script>";
+>>>>>>> 0a31c85a3c51b53c006a0b00c289f99d4cee0735
 		}
-		else
-			echo "<center> Nao deu certo .... </center>";
-			echo "<script>loginfailed()</script>";
 	}
 
 ?>
@@ -35,46 +41,51 @@ include_once('../db/conexao.php');
 <html>
 <head>
 	<title>Cadastro</title>
-	<script type="text/javascript">
-		function loginsuccessfully(){
-			setTimeout("window.location = 'home.php'",1000);
-		}
-
-		function loginfailed(){
-			setTimeout("window.location = 'cadastro_empresa.php'",1000);
-		}
-	</script>
+	<link href="../estilos/popup.css" rel="stylesheet">
+	<link href="../estilos/cadastro.css" rel="stylesheet">
 </head>
 <body>
 
-<form action="cadastro_empresa.php" method="POST">
-	Nome Empresa:<br>
-	<input type="text" name="nome"><br>
-	Senha:<br>
-	<input type="password" name="senha"><br>
-	CNPJ:<br>
-	<input type="text" name="cnpj"><br>
-	CPf:<br>
-	<input type="text" name="cpf"><br>
-	Ramo:<br>
-	<input type="text" name="ramo"><br>
-	Endereco Empresa:<br>
-	<input type="text" name="endereco"><br>
-	Telefone Empresa:<br>
-	<input type="text" name="telefone"><br>
-	Telefone_Dono:<br>
-	<input type="text" name="telefone_dono"><br>
-	Email Responsavel:<br>
-	<input type="text" name="email"><br>
-	Nome Responsavel:<br>
-	<input type="text" name="dono"><br>
-	<button type="submit"> Enviar</button>
+<form id="cadastro" action="cadastro_empresa.php" method="POST">
+	
+	<input type="text" name="nome" placeholder="Razão Social">
+	
+	<input type="text" name="ramo" placeholder="Ramo">
+	
+	<input type="text" name="cnpj" placeholder="CNPJ">
+	
+	<input type="text" name="endereco" placeholder="Endereço empresa">
+	
+	<input type="text" name="telefone" placeholder="Telefone empresa">
 
+	<div id="divisao"></div>
+	
+	<input type="text" name="dono" placeholder="Nome do responsável">
+	
+	<input type="text" name="cpf" placeholder="CPF">
 
+<<<<<<< HEAD
 </form>
+=======
+	<input type="text" name="email" placeholder="Email do responsável">
+>>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
 
+	<input type="text" name="telefone_dono" placeholder="Telefone para contato">
 
+	<input type="password" name="senha" placeholder="Senha">
+		
+	<button type="submit"> Enviar</button>
+</form>
+<div id="popup">
+	<p id="alert">Atenção!</p>
+	<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
+	<a href="">Ir para login</a>
+</div>
+
+<<<<<<< HEAD
 </form>	
 
+=======
+>>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
 </body>
 </html>

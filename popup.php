@@ -10,7 +10,8 @@
 <body>
 	<div id="popup">
 		<p id="alert">Atenção!</p>
-		<p>O ID:<?php echo 3 ?> será utilizado para acesso ao sistema</p>
+		<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
+		<button>Ir para login</button>
 	</div>
 </body>
 </html>
