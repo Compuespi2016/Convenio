@@ -1,8 +1,8 @@
 <?php
-	$usuario = 'compuespi2016';
-	$senha = 'computacao';
-	$host = 'db4free.net:3306';
-	$dbname = 'compuespi';
+	$usuario = 'root';
+	$senha = '';
+	$host = '761ac413.ngrok.io';
+	$dbname = 'convenio';
 
 	$conecta = mysqli_connect($host,$usuario,$senha,$dbname);
 
