@@ -12,6 +12,8 @@ include_once('../db/conexao.php');
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
+		$x = "{'nomeemp'}"
+
 
 		$query = "insert into user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) values ({$nomemp},{$senha},{$cnpj},{$cpf},{$ramo},{$enderecoemp},{$telefonemp},{$telefonedon},{$email}, {$nomeresp})";
 
@@ -69,6 +71,12 @@ include_once('../db/conexao.php');
 	<button type="submit"> Enviar</button>
 
 
+<<<<<<< HEAD
+</form>
+
+
+=======
 </form>	
+>>>>>>> f0f50f82b1214f2fda74adf316f8b077cc5f1d0d
 </body>
 </html>
