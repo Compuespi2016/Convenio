@@ -62,7 +62,11 @@
 	
 	<input type="text" name="cpf" placeholder="CPF">
 
+<<<<<<< HEAD
+</form>
+=======
 	<input type="text" name="email" placeholder="Email do responsável">
+>>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
 
 	<input type="text" name="telefone_dono" placeholder="Telefone para contato">
 
@@ -76,5 +80,10 @@
 	<a href="">Ir para login</a>
 </div>
 
+<<<<<<< HEAD
+</form>	
+
+=======
+>>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
 </body>
 </html>

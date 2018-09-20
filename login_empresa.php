@@ -38,10 +38,22 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 	<form id="login" action="login_empresa.php" method="POST">
 		<input type="text" name="id" placeholder="ID">
 		<input type="password" name="senha" placeholder="Senha">
 		<button type="submit">Logar</button>
 	</form>	
+=======
+<form action="login_empresa.php" method="POST">
+	ID USER:<br>
+	<input type="text" name="id"><br>
+	Senha:<br>
+	<input type="password" name="senha"><br>
+	<button type="submit"> Logar</button>
+
+
+</form>	
+>>>>>>> d4fafd3631fd6dc895f6430e588c3f2e6cfa392e
 </body>
 </html>
