@@ -1,0 +1,25 @@
+
+form#login{
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+	width:400px;
+	align-items: center;
+}
+
+input{
+	background-color:transparent;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	border-bottom: 1px solid lightblue;
+	margin-bottom:5px;
+	padding:10px;
+}
+
+div#divisao{
+	border-bottom:1px solid rgba(0,0,0,.1);
+	width:400px;
+	padding:10px;
+	margin-bottom: 20px;
+}
