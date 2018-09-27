@@ -1,22 +1,27 @@
 <?php
-	include_once('db/conexao.php');
-	if(isset($_POST['id'])){
-		$id = $_POST['id'];
-		$senha = $_POST['senha'];
-		$query = "SELECT * FROM user_empresa WHERE id = '$id' AND senha = '$senha' ";
-		$sql =  mysqli_query($conecta,$query);
-		$row = mysqli_num_rows($sql);
-		if ($row > 0) {
-			session_start();
-			$_SESSION['id'] = mysqli_insert_id($conecta);
-				echo "<center>Logado com sucesso, aguarde .... </center>";
-				echo "<script>loginsuccessfully()</script>";
-		}
-		else{
-			echo "<center>Id ou senha invalidos tente novamente</center>";
-			echo "<script>loginfailed()</script>";
-		}
+include_once('db/conexao.php');
+if (isset($_POST['id'] )) {
+	$id = $_POST['id'];
+ 	$senha = $_POST['senha'];
+ 	$query = "SELECT * FROM user_empresa WHERE id = '$id' AND senha = '$senha' ";
+	$sql =  mysqli_query($conecta,$query) or die(mysqli_error());	# code...
+ 	$row = mysqli_num_rows($sql);
+	if ($row > 0) {
+		session_start();
+		$_SESSION['id'] = mysqli_insert_id($conecta);
+		header("location: index.php");
+		die();
+		//echo "<center>Logado com sucesso, aguarde .... </center>";
+		//echo "<script>loginsuccessfully()</script>";
 	}
+	else{
+		header("location: login_empresa.php");
+		die();
+		//echo "<center>Id ou senha invalidos tente novamente</center>";
+		//echo "<script>loginfailed()</script>";
+	}
+}
+ 
 
 
 ?>
@@ -28,9 +33,11 @@
 	<title>Login</title>
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/login.css" rel="stylesheet">
-	<script>
+
+	<script type="text/javascript">
+
 		function loginsuccessfully(){
-			setTimeout("window.location = 'home.php'",1000);
+			setTimeout("window.location = 'index.php'",1000);
 		}
 		function loginfailed(){
 			setTimeout("window.location = 'login_empresa.php'",1000);
@@ -55,5 +62,6 @@
 		<div id="divisao_login"></div>
 		<input type="submit" value="Logar">
 	</form>
+
 </body>
 </html>

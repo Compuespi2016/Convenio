@@ -1,5 +1,5 @@
 <?php
-	include_once('../db/conexao.php');
+include_once('../db/conexao.php');
 	if(isset($_POST['nome'])){
 		$nomemp = $_POST['nome'];
 		$senha = $_POST['senha'];
@@ -12,24 +12,17 @@
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
-		$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ('$nomemp','$senha','$cnpj','$cpf','$ramo','$enderecoemp','$telefonemp','$telefonedon','$email', '$nomeresp')";
-		$query = mysqli_query($conecta,$query);
+		$query = "insert into user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) values ({$nomemp},{$senha},{$cnpj},{$cpf},{$ramo},{$enderecoemp},{$telefonemp},{$telefonedon},{$email}, {$nomeresp})";
 
-		$id_empresa = mysqli_insert_id($conecta);
-		if($query){
-?>
-			<script>document.getElementById('popup').style.display = 'flex'</script>
-<?php
+		if(mysqli_query($conecta,$query)){
+			echo "<center> Inserido .... </center>";
 			session_start();
-
-			$_SESSION['id'] = $id_empresa;
+			$_SESSION['id'] = mysqli_insert_id($conecta);
 			
 		}
-		else{
-			echo mysqli_error($conecta);
-			$_SESSION['id'] = mysqli_insert_id($conecta);
-			echo "<script>loginsuccessfully()</script>";
-		}
+		else
+			echo "<center> Nao deu certo .... </center>";
+			echo "<script>loginfailed()</script>";
 	}
 
 ?>
@@ -83,10 +76,20 @@
 
 	<input type="submit">
 </form>
-	<div id="popup">
-		<p id="alert">Atenção!</p>
-		<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
-		<a href="">Ir para login</a>
-	</div>
+<div id="popup">
+	<p id="alert">Atenção!</p>
+	<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
+	<a href="../login_empresa.php">Ir para login</a>
+</div>
+<script type="text/javascript">
+	function loginsuccessfully(){
+		setTimeout("window.location = 'home.php'",1000);
+	}
+
+	function loginfailed(){
+		setTimeout("window.location = 'cadastro_empresa.php'",1000);
+	}
+</script>
+
 </body>
 </html>

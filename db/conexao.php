@@ -5,4 +5,5 @@
 	$dbname = 'convenio';
 	
 	$conecta = mysqli_connect($host,$usuario,$senha,$dbname);
+
 ?>

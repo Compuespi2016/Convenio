@@ -1,5 +1,6 @@
 <?php
 include_once('db/conexao.php');
+
 if(isset($_POST['id'])){
 	$id = $_POST['id'];
 	$senha = $_POST['senha'];
