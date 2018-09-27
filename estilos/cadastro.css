@@ -56,15 +56,16 @@ div#divisao{
    color: white;
 }
 
-input[type="submit"]{
+button{
 	background-color:#2268b2;
 	padding:20px;
 	color:white;
 	animation: pulse 3s infinite;
 	animation-play-state: running;
 	cursor:pointer;
+	border:none;
 }
-input[type="submit"]:hover{
+button:hover{
 	background-color:black;
 }
 

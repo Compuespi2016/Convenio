@@ -15,9 +15,9 @@ include_once('../db/conexao.php');
 		$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ( '$nomemp','$senha','$cnpj','$cpf', '$ramo', '$enderecoemp', '$telefonemp', '$telefonedon', '$email', '$nomeresp' )";
 
 		if(mysqli_query($conecta,$query)){
-			echo "<center> Inserido .... </center>";
 			session_start();
 			$_SESSION['id'] = mysqli_insert_id($conecta);
+			echo "<script>document.getElementById('popup').style.display = 'block'</script>";
 			
 		}
 		else{
@@ -77,7 +77,7 @@ include_once('../db/conexao.php');
 	
 	<div id="divisao"></div>
 
-	<input type="submit" value="Cadastrar">
+	<button type="submit">Cadastrar</button>
 </form>
 <div id="popup">
 	<p id="alert">Atenção!</p>
