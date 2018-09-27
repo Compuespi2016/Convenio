@@ -12,22 +12,13 @@ include_once('../db/conexao.php');
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
-		$x = "{'nomeemp'}"
-
-
 		$query = "insert into user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) values ({$nomemp},{$senha},{$cnpj},{$cpf},{$ramo},{$enderecoemp},{$telefonemp},{$telefonedon},{$email}, {$nomeresp})";
 
 		if(mysqli_query($conecta,$query)){
 			echo "<center> Inserido .... </center>";
 			session_start();
-			$_SESSION['id'] = $id_empresa;
-			
-		}
-		else{
-			echo mysqli_error($conecta);
- 
 			$_SESSION['id'] = mysqli_insert_id($conecta);
-			echo "<script>loginsuccessfully()</script>";
+			
 		}
 		else
 			echo "<center> Nao deu certo .... </center>";
@@ -41,46 +32,64 @@ include_once('../db/conexao.php');
 <html>
 <head>
 	<title>Cadastro</title>
-	<script type="text/javascript">
-		function loginsuccessfully(){
-			setTimeout("window.location = 'home.php'",1000);
-		}
-
-		function loginfailed(){
-			setTimeout("window.location = 'cadastro_empresa.php'",1000);
-		}
-	</script>
+	<link href="../estilos/popup.css" rel="stylesheet">
+	<link href="../estilos/cadastro.css" rel="stylesheet">
+	<link href="../estilos/topo.css" rel="stylesheet">
 </head>
 <body>
+	<header>
+		<div id="topo">
+			<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
+		</div>
+		<div id="titulo">
+			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
+			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+		</div>
+	</header>
+<form id="cadastro" action="cadastro_empresa.php" method="POST">
+	<div id="titulo_divisao">Cadastro de empresa</div>
+	<div id="divisao">Dados da empresa</div>
 
-<form action="cadastro_empresa.php" method="POST">
-	Nome Empresa:<br>
-	<input type="text" name="nome"><br>
-	Senha:<br>
-	<input type="password" name="senha"><br>
-	CNPJ:<br>
-	<input type="text" name="cnpj"><br>
-	CPf:<br>
-	<input type="text" name="cpf"><br>
-	Ramo:<br>
-	<input type="text" name="ramo"><br>
-	Endereco Empresa:<br>
-	<input type="text" name="endereco"><br>
-	Telefone Empresa:<br>
-	<input type="text" name="telefone"><br>
-	Telefone_Dono:<br>
-	<input type="text" name="telefone_dono"><br>
-	Email Responsavel:<br>
-	<input type="text" name="email"><br>
-	Nome Responsavel:<br>
-	<input type="text" name="dono"><br>
-	<button type="submit"> Enviar</button>
+	<input type="text" name="nome" placeholder="Razão Social">
+	
+	<input type="text" name="ramo" placeholder="Ramo">
+	
+	<input type="text" name="cnpj" placeholder="CNPJ">
+	
+	<input type="text" name="endereco" placeholder="Endereço da empresa">
+	
+	<input type="text" name="telefone" placeholder="Telefone da empresa">
 
+	<div id="divisao">Dados do responsável</div>
+	
+	<input type="text" name="dono" placeholder="Nome do responsável">
+	
+	<input type="text" name="cpf" placeholder="CPF">
 
+	<input type="text" name="email" placeholder="Email do responsável">
+
+	<input type="text" name="telefone_dono" placeholder="Telefone para contato">
+
+	<input type="password" name="senha" placeholder="Senha">
+	
+	<div id="divisao"></div>
+
+	<input type="submit" value="Cadastrar">
 </form>
+<div id="popup">
+	<p id="alert">Atenção!</p>
+	<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
+	<a href="../login_empresa.php">Ir para login</a>
+</div>
+<script type="text/javascript">
+	function loginsuccessfully(){
+		setTimeout("window.location = 'home.php'",1000);
+	}
 
-
-</form>	
+	function loginfailed(){
+		setTimeout("window.location = 'cadastro_empresa.php'",1000);
+	}
+</script>
 
 </body>
 </html>

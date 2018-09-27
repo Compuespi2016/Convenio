@@ -11,14 +11,18 @@ include_once('db/conexao.php');
 			session_start();
 			$_SESSION['id'] = mysqli_insert_id($conecta);
 			echo "<center>Logado com sucesso, aguarde .... </center>";
-			echo "<script>loginsuccessfully()</script>";
+			header("location: home_preg.php");
+			exit();
+			///echo "<script>loginsuccessfully()</script>";
 		}
 		else{
 			echo "<center>Id ou senha invalidos tente novamente</center>";
-			echo "<script>loginfailed()</script>";
+			header("location: login_preg.php");
+			exit();
+			///echo "<script>loginfailed()</script>";
 		}
 	}
- 
+
 ?>
 
 
@@ -26,6 +30,8 @@ include_once('db/conexao.php');
 <html>
 <head>
 	<title>Login Preg</title>
+	<link href="estilos/topo.css" rel="stylesheet">
+	<link href="estilos/login.css" rel="stylesheet">
 	<script type="text/javascript">
 		function loginsuccessfully(){
 			setTimeout("window.location = 'home_preg.php'",1000);
@@ -36,13 +42,21 @@ include_once('db/conexao.php');
 	</script>
 </head>
 <body>
-
-<form action="login_empresa.php" method="POST">
-	ID USER:<br>
-	<input type="text" name="id"><br>
-	Senha:<br>
-	<input type="password" name="senha"><br>
-	<button type="submit"> Logar</button>
+	<header>
+		<div id="topo">
+			<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
+		</div>
+		<div id="titulo">
+			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
+			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+		</div>
+	</header>
+<form id="login" action="login_empresa.php" method="POST">
+	<div id="titulo_divisao">Login PREG</div>
+	<input type="text" name="id" placeholder="ID">
+	<input type="password" name="senha" placeholder="Senha">
+	<div id="divisao_login"></div>
+	<input type="submit" value="Logar">
 
 
 </form>	

@@ -9,9 +9,10 @@ div#setores a{
 	padding-left:35px;
 	padding-top:20px;
 	padding-bottom:20px;
-	background-color: crimson;
+	background-color: #2268b2;
 	color:white;
 	font-size:25px;
+	font-weight: bold;
 	text-decoration: none;
 	margin-left:10px;
 	margin-right:10px;
@@ -20,8 +21,8 @@ div#setores a{
 }
 
 div#setores a:hover{
-	background-color:lightgreen;
-	color:black;
+	background-color:black;
+	color:white;
 }
 
 div#titulo, div#cadastrar{
@@ -37,8 +38,22 @@ div#titulo{
 }
 
 div#cadastrar{
-	color:lightblue;
-	font-size:12px;
+	color:#2268b2;
+	font-size:14px;
 	align-self: center;
 	padding:5px;
+	width:200px;
+	border-bottom: 1px solid #2268b2;
+	margin-left:40%;
+
+}
+div#cadastrar a{
+	text-decoration: none;
+	color:#2268b2;
+}
+
+div#sec_title{
+	display:flex;
+	justify-content: flex-start;
+	margin-left:20%;
 }

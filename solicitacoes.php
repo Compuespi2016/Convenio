@@ -7,6 +7,19 @@ if(!isset($_SESSION['id'])) {
 }else{
 
 }
+
+$id = $_SESSION['id'];
+
+
+function listarSolicitacoes($conexao,$id_emp){
+	$pedidos = array();
+	$resultado = mysqli_query($conexao,"SELECT e.nome , id from solicitacoes  where id = " . $id_emp );
+	while($pedido = mysqli_fetch_assoc($resultado)){
+		array_push($pedidos, $pedido);
+	}
+	return $pedidos;
+}
+
 ?>
 
 
@@ -20,11 +33,31 @@ if(!isset($_SESSION['id'])) {
 	<div>
 		<table>
 			<thead>
-				<th>Id Empresa</th>
-				<th>Id Curso</th>	
+				<th>Nome Empresa</th>
+				<th>Nome Curso</th>	
 			</thead>
 		</table>
 	</div>
+
+
+<?php
+	$pedidos = listarSolicitacoes($conecta,$id);
+	foreach ($pedidos as $pedido ){
+
+
+?>
+		<tr>
+				
+			<td> <?= $pedido['nome']?> </td>
+			<td> <?= $pedido['id']?> </td>
+
+		</tr>
+
+<?php
+
+	}
+ ?>
+
 
 </body>
 </html>

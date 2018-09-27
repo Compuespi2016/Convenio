@@ -3,19 +3,30 @@
 <head>
 	<title>Convênios</title>
 	<link href="estilos/index.css" rel="stylesheet">
+	<link href="estilos/topo.css" rel="stylesheet">
 </head>
 <body>
 	
-	<div id="titulo">
-		<h3>Escolha sua opção de login</h3>
+	<header>
+		<div id="topo">
+			<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
+		</div>
+		<div id="titulo">
+			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
+			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+		</div>
+	</header>
+
+	<div id="sec_title">
+		<h3>Efetue login</h3>
 	</div>
 	<div id="setores">
-		<a href="#">PREG</a>
-		<a href="#">Empresa</a>
+		<a href="login_preg.php">PREG</a>
+		<a href="login_empresa.php">Empresa</a>
 		<a href="#">Professor</a>
 	</div>
 	<div id="cadastrar">
-		<a>Deseja cadastrar sua empresa?</a>
+		<a href="#">Deseja cadastrar sua empresa?</a>
 	</div>
 </body>
 </html>
