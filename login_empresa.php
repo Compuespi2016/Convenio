@@ -26,6 +26,7 @@
 <html>
 <head>
 	<title>Login</title>
+	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/login.css" rel="stylesheet">
 	<script>
 		function loginsuccessfully(){
@@ -37,23 +38,22 @@
 	</script>
 </head>
 <body>
-
-<<<<<<< HEAD
+	<header>
+		<div id="topo">
+			<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
+		</div>
+		<div id="titulo">
+			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
+			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+		</div>
+	</header>
+	
 	<form id="login" action="login_empresa.php" method="POST">
+		<div id="titulo_divisao">Login empresa</div>
 		<input type="text" name="id" placeholder="ID">
 		<input type="password" name="senha" placeholder="Senha">
-		<button type="submit">Logar</button>
-	</form>	
-=======
-<form action="login_empresa.php" method="POST">
-	ID USER:<br>
-	<input type="text" name="id"><br>
-	Senha:<br>
-	<input type="password" name="senha"><br>
-	<button type="submit"> Logar</button>
-
-
-</form>	
->>>>>>> d4fafd3631fd6dc895f6430e588c3f2e6cfa392e
+		<div id="divisao_login"></div>
+		<input type="submit" value="Logar">
+	</form>
 </body>
 </html>

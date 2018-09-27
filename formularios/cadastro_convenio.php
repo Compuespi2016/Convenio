@@ -8,7 +8,7 @@
 	if(isset($_POST["nome"])){
 		$checkbox = $_POST["cursos"]
 		foreach($checkbox as $valor){
-			$query_checkbox = "INSERT INTO convenios (empresa_id,curso_id) VALUES (".$_SESSION["id"].",".$valor.")";
+			$query_checkbox = "INSERT INTO solicitacoes (empresa_id,curso_id) VALUES (".$_SESSION["id"].",".$valor.")";
 			$query_checkbox = mysqli_query($conecta,$query_checkbox);
 		}
 	}

@@ -1,0 +1,41 @@
+body{
+	margin:0px;
+}
+header{
+	position:relative;
+	display:flex;
+	flex-direction: column;
+	width:100%;
+	height:auto;
+	background-color:white;
+	margin-bottom:50px;
+}
+#topo{
+	display:inline-block;
+	padding:10px;
+	margin:2px;
+}
+#topo img{
+	left: 0;
+	margin-left:20px;
+}
+#topo p#uespi{
+	font-size:30px;
+}
+#titulo{
+	flex-direction: column;
+	background-color:#2268b2;
+}
+#titulo p#setor{
+	color:white;
+	font-size:25px;
+	left:0;
+	align-self: flex-start;
+	margin-left:20px;
+}
+#titulo p#convenio_estagio{
+	color:white;
+	font-size:17px;
+	align-self: flex-start;
+	margin-left:20px;
+}

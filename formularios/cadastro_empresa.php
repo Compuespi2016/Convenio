@@ -41,11 +41,22 @@
 	<title>Cadastro</title>
 	<link href="../estilos/popup.css" rel="stylesheet">
 	<link href="../estilos/cadastro.css" rel="stylesheet">
+	<link href="../estilos/topo.css" rel="stylesheet">
 </head>
 <body>
-
+	<header>
+		<div id="topo">
+			<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
+		</div>
+		<div id="titulo">
+			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
+			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+		</div>
+	</header>
 <form id="cadastro" action="cadastro_empresa.php" method="POST">
 	
+	<div id="divisao">Dados da empresa</div>
+
 	<input type="text" name="nome" placeholder="Razão Social">
 	
 	<input type="text" name="ramo" placeholder="Ramo">
@@ -56,34 +67,26 @@
 	
 	<input type="text" name="telefone" placeholder="Telefone empresa">
 
-	<div id="divisao"></div>
+	<div id="divisao">Dados do responsável</div>
 	
 	<input type="text" name="dono" placeholder="Nome do responsável">
 	
 	<input type="text" name="cpf" placeholder="CPF">
 
-<<<<<<< HEAD
-</form>
-=======
 	<input type="text" name="email" placeholder="Email do responsável">
->>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
 
 	<input type="text" name="telefone_dono" placeholder="Telefone para contato">
 
 	<input type="password" name="senha" placeholder="Senha">
-		
-	<button type="submit"> Enviar</button>
+	
+	<div id="divisao"></div>
+
+	<input type="submit">
 </form>
-<div id="popup">
-	<p id="alert">Atenção!</p>
-	<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
-	<a href="">Ir para login</a>
-</div>
-
-<<<<<<< HEAD
-</form>	
-
-=======
->>>>>>> d03d7998d40ce65a65b367cd8d8c1a48377466f3
+	<div id="popup">
+		<p id="alert">Atenção!</p>
+		<p>ID: <?php echo $id_empresa ?> <br>Deverá ser utilizado para acessar o sistema.</p>
+		<a href="">Ir para login</a>
+	</div>
 </body>
 </html>
