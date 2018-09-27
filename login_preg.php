@@ -1,21 +1,24 @@
 <?php
 include_once('db/conexao.php');
- $id = $_POST['id'];
- $senha = $_POST['senha'];
- $query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
- $sql =  mysqli_query($conecta,$query) or die(mysqli_error());
+	if (isset($id = $_POST['id'])){
+		$id = $_POST['id'];
+ 		$senha = $_POST['senha'];
+ 		$query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
+ 		$sql =  mysqli_query($conecta,$query) or die(mysqli_error());
 
-$row = mysqli_num_rows($sql);
-if ($row > 0) {
-	session_start();
-	$_SESSION['id'] = mysqli_insert_id($conecta);
-		echo "<center>Logado com sucesso, aguarde .... </center>";
-		echo "<script>loginsuccessfully()</script>";
-}
-else{
-	echo "<center>Id ou senha invalidos tente novamente</center>";
-	echo "<script>loginfailed()</script>";
-}
+		$row = mysqli_num_rows($sql);
+		if ($row > 0) {
+			session_start();
+			$_SESSION['id'] = mysqli_insert_id($conecta);
+			echo "<center>Logado com sucesso, aguarde .... </center>";
+			echo "<script>loginsuccessfully()</script>";
+		}
+		else{
+			echo "<center>Id ou senha invalidos tente novamente</center>";
+			echo "<script>loginfailed()</script>";
+		}
+	}
+ 
 ?>
 
 
