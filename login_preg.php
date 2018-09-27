@@ -1,6 +1,6 @@
 <?php
 include_once('db/conexao.php');
-	if (isset($id = $_POST['id'])){
+	if (isset($_POST['id'])){
 		$id = $_POST['id'];
  		$senha = $_POST['senha'];
  		$query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
@@ -53,7 +53,7 @@ include_once('db/conexao.php');
 			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
 		</div>
 	</header>
-<form id="login" action="login_empresa.php" method="POST">
+<form id="login" action="login_preg.php" method="POST">
 	<div id="titulo_divisao">Login PREG</div>
 	<input type="text" name="id" placeholder="ID">
 	<input type="password" name="senha" placeholder="Senha">
