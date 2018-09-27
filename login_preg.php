@@ -19,7 +19,7 @@ include_once('db/conexao.php');
 			echo "<center>Id ou senha invalidos tente novamente</center>";
 			header("location: login_preg.php");
 			exit();
-			///echo "<script>loginfailed()</script>";
+			///-echo "<script>loginfailed()</script>";
 		}
 	}
 
