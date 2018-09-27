@@ -1,0 +1,16 @@
+ul#cursos{
+	display:flex;
+	margin-left:35%;
+	list-style-type: none;
+	flex-direction: column;
+	padding:20px;
+	color:white;
+	width:300px;
+	background-color:rgba(0,0,0,.8);
+}
+li{
+	color: white;
+	align-self: center;
+	font-size:25px;
+	margin-bottom:10px;
+}

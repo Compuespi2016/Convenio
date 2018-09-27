@@ -1,5 +1,7 @@
 body{
 	margin:0px;
+	background-image: url("../imgs/uespi.jpg");
+	background-size:100% 100%;
 }
 header{
 	position:relative;
