@@ -1,5 +1,5 @@
 <?php
-include_once('../db/conexao.php');
+include_once('db/conexao.php');
  $id = $_POST['id'];
  $senha = $_POST['senha'];
  $query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
