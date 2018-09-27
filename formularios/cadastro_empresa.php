@@ -47,7 +47,7 @@ include_once('../db/conexao.php');
 		</div>
 	</header>
 <form id="cadastro" action="cadastro_empresa.php" method="POST">
-	
+	<div id="titulo_divisao">Cadastro de empresa</div>
 	<div id="divisao">Dados da empresa</div>
 
 	<input type="text" name="nome" placeholder="Razão Social">
@@ -56,9 +56,9 @@ include_once('../db/conexao.php');
 	
 	<input type="text" name="cnpj" placeholder="CNPJ">
 	
-	<input type="text" name="endereco" placeholder="Endereço empresa">
+	<input type="text" name="endereco" placeholder="Endereço da empresa">
 	
-	<input type="text" name="telefone" placeholder="Telefone empresa">
+	<input type="text" name="telefone" placeholder="Telefone da empresa">
 
 	<div id="divisao">Dados do responsável</div>
 	
