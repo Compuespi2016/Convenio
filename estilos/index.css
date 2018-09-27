@@ -1,0 +1,44 @@
+div#setores{
+	display:flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+div#setores a{
+	padding-right:35px;
+	padding-left:35px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color: crimson;
+	color:white;
+	font-size:25px;
+	text-decoration: none;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:30px;
+	width:100px;
+}
+
+div#setores a:hover{
+	background-color:lightgreen;
+	color:black;
+}
+
+div#titulo, div#cadastrar{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+div#titulo{
+	color:black;
+	font-size:18px;
+}
+
+div#cadastrar{
+	color:lightblue;
+	font-size:12px;
+	align-self: center;
+	padding:5px;
+}
