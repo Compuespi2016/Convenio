@@ -28,7 +28,7 @@
 		<a href="#">Professor</a>
 	</div>
 	<div id="cadastrar">
-		<a href="#">Deseja cadastrar sua empresa?</a>
+		<a href="formularios/cadastro_empresa.php">Deseja cadastrar sua empresa?</a>
 	</div>
 </body>
 </html>

@@ -12,7 +12,7 @@ include_once('../db/conexao.php');
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
-		$query = "insert into user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) values ({$nomemp},{$senha},{$cnpj},{$cpf},{$ramo},{$enderecoemp},{$telefonemp},{$telefonedon},{$email}, {$nomeresp})";
+		$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ( '$nomemp','$senha','$cnpj','$cpf', '$ramo', '$enderecoemp', '$telefonemp', '$telefonedon', '$email', '$nomeresp' )";
 
 		if(mysqli_query($conecta,$query)){
 			echo "<center> Inserido .... </center>";
@@ -20,9 +20,10 @@ include_once('../db/conexao.php');
 			$_SESSION['id'] = mysqli_insert_id($conecta);
 			
 		}
-		else
-			echo "<center> Nao deu certo .... </center>";
+		else{
+			echo mysqli_error($conecta);
 			echo "<script>loginfailed()</script>";
+		}
 	}
 
 ?>
@@ -84,13 +85,6 @@ include_once('../db/conexao.php');
 	<a href="../login_empresa.php">Ir para login</a>
 </div>
 <script type="text/javascript">
-	function loginsuccessfully(){
-		setTimeout("window.location = 'home.php'",1000);
-	}
-
-	function loginfailed(){
-		setTimeout("window.location = 'cadastro_empresa.php'",1000);
-	}
 </script>
 
 </body>
