@@ -4,6 +4,7 @@ include_once('db/conexao.php');
 		$id = $_POST['matricula'];
  		$senha = $_POST['senha'];
  		$query = "SELECT * FROM professor WHERE matricula = '$id' AND senha = '$senha' LIMIT 1";
+ 		echo $query;
  		$sql =  mysqli_query($conecta,$query) or die(mysqli_error());
         $dados = mysqli_fetch_assoc($sql);
 		$row = mysqli_num_rows($sql);
@@ -30,9 +31,9 @@ include_once('db/conexao.php');
 </head>
 <body>
 	<?php require('include/topo.php') ?>
-	<form id="login" action="login_preg.php" method="POST">
+	<form id="login" action="login_professor.php" method="POST">
 		<div id="titulo_divisao">Login Professor</div>
-		<input type="text" name="id" placeholder="Matricula">
+		<input type="text" name="matricula" placeholder="Matricula">
 		<input type="password" name="senha" placeholder="Senha">
 		<div id="divisao_login"></div>
 		<input type="submit" value="Logar">

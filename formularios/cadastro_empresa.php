@@ -22,11 +22,12 @@ include_once('../db/conexao.php');
 				$id_empresa = mysqli_insert_id($conecta);
 				//header('location: cadastro_empresa.php?id='.$id_empresa);
 ?>
-			<script>alert('O id:<?php echo $id_empresa; ?> deverá ser utilizado para login')</script>
+			<!--<script>alert('O id: <?php echo $id_empresa; ?> deverá ser utilizado para login')</script>-->
 <?php
-			
+				header('location: ../home_empresa.php?id='.$id_empresa);
 			}
 			else{
+				
 				echo mysqli_error($conecta);
 				echo "<script>loginfailed()</script>";
 			}
