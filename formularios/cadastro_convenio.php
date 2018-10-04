@@ -27,10 +27,11 @@
 		<link href="../estilos/cadastro_convenio.css" rel="stylesheet">
 	</head>
 	<body>
-		<?php require('include/topo.php') ?>
+		<?php require('../include/topo.php') ?>
 		<form id="checkboxs" action="cadastro_convenio.php" method="POST">
 			<div id="check">
 				<p style="text-align:center">Cadastro de convênio</p>
+				<p style="text-align:left"> <font size="4">Selecione os cursos de interesse para estágio: </font> </p><br>
 				<?php while($dados = mysqli_fetch_assoc($query)) { ?>
 					<?php
 						$id = $dados["id"];
@@ -40,7 +41,7 @@
 				<?php } ?>
 			</div>
 			
-			<input type="submit" value="Cadastrar">
+			<input type="submit" value="Solicitar">
 		</form>
 	</body>
 </html>

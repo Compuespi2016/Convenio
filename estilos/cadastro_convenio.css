@@ -13,6 +13,7 @@ form#checkboxs{
 	background-color:rgba(0,0,0,.5);
 	color:white;
 }
+
 input[type="checkbox"]{
 	padding:20px;
 	margin-top:10px;
@@ -21,6 +22,7 @@ input[type="checkbox"]{
 	color:white;
 	vertical-align: middle;
 }
+
 p#item{
 	color:white;
 	font-size:15px !important;
@@ -37,10 +39,12 @@ input[type="submit"]{
 	margin-top:20px;
 	font-size:20px;
 }
+
 input[type="submit"]:hover{
 	background-color:black;
 	color:white;
 }
+
 #check p{
 	font-size:25px;
 	color:white;
