@@ -1,11 +1,12 @@
 div#popup{
-	display:none;
+	display:block;
 	width:200px;
 	height:auto;
 	background-color:rgba(220,20,60,.5);
 	padding:10px;
 	justify-content: center;
 	flex-direction: column;
+	margin-left:40%;
 }
 div#popup p{
 	color: white;

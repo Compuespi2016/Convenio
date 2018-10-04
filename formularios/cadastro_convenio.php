@@ -27,7 +27,7 @@
 		<link href="../estilos/cadastro_convenio.css" rel="stylesheet">
 	</head>
 	<body>
-		<?php require('include/topo.php') ?>
+		<?php require('../include/topo.php') ?>
 		<form id="checkboxs" action="cadastro_convenio.php" method="POST">
 			<div id="check">
 				<p style="text-align:center">Cadastro de convênio</p>
