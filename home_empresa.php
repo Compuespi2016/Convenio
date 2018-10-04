@@ -25,7 +25,7 @@
         <?php if($resultado == 0){ ?>
             <a href="formularios/cadastro_convenio.php">Cadastro de convênio</a>
         <?php }else{ ?>
-            <p>Você já é conveniado com a uespi!</p>
+            <p>Declaramos que a sua solicitação de convênio para estágio foi aprovada pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
         <?php } ?>
         <a href="include/logout.php">Sair</a>
     </div>
