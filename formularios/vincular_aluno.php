@@ -25,10 +25,14 @@
         $id_curso = $_POST['curso'];
         $id_professor = $_SESSION['id'];
 
-        $query = "INSERT INTO vinculo (aluno_id,empresa_id,curso_id,professor_id,data) VALUES ('$id_aluno','$id_empresa','$id_curso','$id_professor',SYSDATE())";
+
+        $query = "INSERT INTO vinculo (aluno_id,empresa_id,curso_id,professor_id,data) VALUES (".$id_aluno.",".$id_empresa.",".$id_curso.",".$id_professor.",SYSDATE())";
+        echo $query;
         $query = mysqli_query($conecta,$query);
         if($query){
             header('location: ../home_professor.php?cadastro=true');
+        }else{
+            echo mysqli_error($conecta);
         }
     }
 
@@ -47,22 +51,22 @@
 		<form id="cadastro" action="vincular_aluno.php" method="POST">
             <select name='aluno'>
                 <?php while($alunos = mysqli_fetch_assoc($aluno)){ ?>
-                    <option value="<php echo $alunos['id']; ?>"><?php echo $alunos['nome']; ?></option>
+                    <option value="<?php echo $alunos['id']; ?>"><?php echo $alunos['nome']; ?></option>
                 <?php } ?>
-            <select>
+            </select>
             
             <select name='empresa'>
                 <?php while($empresas = mysqli_fetch_assoc($empresa)){ ?>
-                    <option value="<php echo $empresas['id']; ?>"><?php echo $empresas['nome']; ?></option>
+                    <option value="<?php echo $empresas['id']; ?>"><?php echo $empresas['nome']; ?></option>
                 <?php } ?>
-            <select>
+            </select>
 
             <select name='curso'>
                 <?php while($cursos = mysqli_fetch_assoc($curso)){ ?>
-                    <option value="<php echo $cursos['id']; ?>"><?php echo $cursos['nome']; ?></option>
+                    <option value="<?php echo $cursos['id']; ?>"><?php echo $cursos['nome']; ?></option>
                 <?php } ?>
-            <select>
-			<button type="submit">Cadastrar</button>
+            </select>
+			<button type="submit">Vincular aluno</button>
 		</form>
 	</body>
 </html>
