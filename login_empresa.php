@@ -1,29 +1,27 @@
 <?php
 include_once('db/conexao.php');
-if (isset($_POST['id'] )) {
-	$id = $_POST['id'];
- 	$senha = $_POST['senha'];
- 	$query = "SELECT * FROM user_empresa WHERE id = '$id' AND senha = '$senha' ";
-	$sql =  mysqli_query($conecta,$query) or die(mysqli_error());	# code...
- 	$row = mysqli_num_rows($sql);
-	if ($row > 0) {
-		session_start();
-		$_SESSION['id'] = mysqli_insert_id($conecta);
-		header("location: index.php");
-		die();
-		//echo "<center>Logado com sucesso, aguarde .... </center>";
-		//echo "<script>loginsuccessfully()</script>";
+	if (isset($_POST['id'] )) {
+		$id = $_POST['id'];
+		$senha = $_POST['senha'];
+		$query = "SELECT * FROM user_empresa WHERE id = '$id' AND senha = '$senha' ";
+		$sql =  mysqli_query($conecta,$query) or die(mysqli_error());	# code...
+		$dados = mysqli_fetch_assoc($sql);
+		$row = mysqli_num_rows($sql);
+		if ($row > 0) {
+			session_start();
+			$_SESSION['id'] = $dados["id"];
+			header("location: home_empresa.php");
+			die();
+			//echo "<center>Logado com sucesso, aguarde .... </center>";
+			//echo "<script>loginsuccessfully()</script>";
+		}
+		else{
+			header("location: login_empresa.php");
+			die();
+			//echo "<center>Id ou senha invalidos tente novamente</center>";
+			//echo "<script>loginfailed()</script>";
+		}
 	}
-	else{
-		header("location: login_empresa.php");
-		die();
-		//echo "<center>Id ou senha invalidos tente novamente</center>";
-		//echo "<script>loginfailed()</script>";
-	}
-}
- 
-
-
 ?>
 
 
@@ -45,17 +43,7 @@ if (isset($_POST['id'] )) {
 	</script>
 </head>
 <body>
-	<header>
-		<div id="topo">
-			<a href="index.php">
-				<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
-			</a>
-		</div>
-		<div id="titulo">
-			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
-			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
-		</div>
-	</header>
+	<?php require('include/topo.php') ?>
 	
 	<form id="login" action="login_empresa.php" method="POST">
 		<div id="titulo_divisao">Login empresa</div>

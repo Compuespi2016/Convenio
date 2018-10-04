@@ -42,25 +42,13 @@ include_once('db/conexao.php');
 	</script>
 </head>
 <body>
-	<header>
-		<div id="topo">
-			<a href="index.php">
-				<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
-			</a>
-		</div>
-		<div id="titulo">
-			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
-			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
-		</div>
-	</header>
-<form id="login" action="login_preg.php" method="POST">
-	<div id="titulo_divisao">Login PREG</div>
-	<input type="text" name="id" placeholder="ID">
-	<input type="password" name="senha" placeholder="Senha">
-	<div id="divisao_login"></div>
-	<input type="submit" value="Logar">
-
-
-</form>	
+	<?php require('include/topo.php') ?>
+	<form id="login" action="login_preg.php" method="POST">
+		<div id="titulo_divisao">Login PREG</div>
+		<input type="text" name="id" placeholder="ID">
+		<input type="password" name="senha" placeholder="Senha">
+		<div id="divisao_login"></div>
+		<input type="submit" value="Logar">
+	</form>	
 </body>
 </html>

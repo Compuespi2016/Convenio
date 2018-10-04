@@ -1,11 +1,11 @@
 ul#cursos{
 	display:flex;
-	margin-left:35%;
+	
 	list-style-type: none;
 	flex-direction: column;
 	padding:20px;
 	color:white;
-	width:300px;
+	width:auto;
 	background-color:rgba(0,0,0,.8);
 }
 li{

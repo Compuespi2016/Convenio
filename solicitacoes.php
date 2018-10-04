@@ -5,18 +5,12 @@ if(!isset($_SESSION['id'])) {
 	header("location: login_preg.php");
 	exit();
 }else{
-
+	
 }
-
-$id = $_SESSION['id'];
-
-function listarSolicitacoes($conexao,$id_emp){
-	$pedidos = array();
-	$resultado = mysqli_query($conexao,"SELECT u.nome,u.id from solicitacoes s,user_empresa u where u.id =".$id_emp);
-	while($pedido = mysqli_fetch_assoc($resultado)){
-		array_push($pedidos, $pedido);
-	}
-	return $pedidos;
+$query = "SELECT user_empresa.nome,user_empresa.id FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id";
+$data = mysqli_query($conecta,$query);
+if($data === FALSE){
+	echo mysqli_error($conecta);
 }
 ?>
 
@@ -24,31 +18,38 @@ function listarSolicitacoes($conexao,$id_emp){
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+	<link href="estilos/topo.css" rel="stylesheet">
+	<link href="estilos/tabela.css" rel="stylesheet">
 	<title>Solicitações</title>
 </head>
 <body>
-	<div>
+<header>
+	<?php require('include/topo.php'); ?>
+	<div id="tabela">
 		<table>
 			<thead>
-				<th>Nome Empresa</th>
-				<th>Visualizar cursos</th>
-				<th>Aceitar</th>
-				<th>Recusar</th>
+				<tr>
+					<th>Nome Empresa</th>
+					<th>Visualizar cursos</th>
+					<th>Aceitar</th>
+					<th>Recusar</th>
+				</tr>
 			</thead>
-		</table>
-	</div>
+			<tbody>
 <?php
-	$pedidos = listarSolicitacoes($conecta,$id);
-	foreach ($pedidos as $pedido ){
+	while($dados = mysqli_fetch_assoc($data)){
 ?>
-		<tr>
-			<td> <?= $pedido['nome']?> </td>
-			<a id="blue" href="lista_cursos.php?id=<?php echo $pedido['id']; ?>">Listar</a>
-			<a id="green" href="aceita_convenio.php?id=<?php echo $pedido['id']; ?>">Aceitar</a>
-			<a id="red" href="recusa_convenio.php?id=<?php echo $pedido['id']; ?>">Recusar</a>
-		</tr>
+				<tr>
+					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
+					<td style="text-align:center"><a id="blue" href="lista_cursos.php?id=<?php echo $dados['id']; ?>">Listar</a></td>
+					<td style="text-align:center"><a id="green" href="aceita_convenio.php?id=<?php echo $dados['id']; ?>">Aceitar</a></td>
+					<td style="text-align:center"><a id="red" href="recusa_convenio.php?id=<?php echo $dados['id']; ?>">Recusar</a></td>
+				</tr>
 <?php
 	}
  ?>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
