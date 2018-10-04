@@ -25,7 +25,7 @@
         $id_curso = $_POST['curso'];
         $id_professor = $_SESSION['id'];
 
-        $query = "INSERT INTO vinculo (aluno_id,empresa_id,curso_id,professor_id) VALUES ('$id_aluno','$id_empresa','$id_curso','$id_professor')";
+        $query = "INSERT INTO vinculo (aluno_id,empresa_id,curso_id,professor_id,data) VALUES ('$id_aluno','$id_empresa','$id_curso','$id_professor',SYSDATE())";
         $query = mysqli_query($conecta,$query);
         if($query){
             header('location: ../home_professor.php?cadastro=true');
