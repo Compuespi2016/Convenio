@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.id FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id";
+$query = "SELECT user_empresa.nome,user_empresa.id FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
@@ -23,8 +23,11 @@ if($data === FALSE){
 	<title>Solicitações</title>
 </head>
 <body>
-<header>
 	<?php require('include/topo.php'); ?>
+	<div id="menu_left" style="display:flex;flex-direction:column;">
+		<a href="empresas_conveniadas.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Empresas conveniadas ></a>
+		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+	</div>
 	<div id="tabela">
 		<table>
 			<thead>

@@ -1,6 +1,6 @@
 <header>
     <div id="topo">
-        <a href="index.php">
+        <a href="/convenio/index.php">
             <img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
         </a>
     </div>

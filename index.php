@@ -15,7 +15,7 @@
 	<div id="setores">
 		<a href="login_preg.php">PREG</a>
 		<a href="login_empresa.php">Empresa</a>
-		<a href="#">Professor</a>
+		<a href="login_professor.php">Professor</a>
 	</div>
 	<div id="cadastrar">
 		<a href="formularios/cadastro_empresa.php">Deseja cadastrar sua empresa?</a>
