@@ -18,7 +18,7 @@
     if(isset($_GET['cadastro'])){
 ?>
         
-        <script>alert('Convênio solicitado com sucesso')</script>
+        <script>alert('Convênio solicitado com sucesso!')</script>
 <?php
 
     }

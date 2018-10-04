@@ -27,6 +27,7 @@ include_once('../db/conexao.php');
 				header('location: ../home_empresa.php?id='.$id_empresa);
 			}
 			else{
+				
 				echo mysqli_error($conecta);
 				echo "<script>loginfailed()</script>";
 			}

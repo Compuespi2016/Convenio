@@ -19,6 +19,8 @@ include_once('../db/conexao.php');
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +31,7 @@ include_once('../db/conexao.php');
 </head>
 <body>
 	<?php require('../include/topo.php') ?>
-	<form id="cadastro" action="aluno.php" method="POST">
+	<form id="cadastro" action="professor.php" method="POST">
 		<div id="titulo_divisao">Cadastro de professores</div>
 
 		<input type="text" name="nome" maxlength=50 placeholder="Nome">
@@ -42,9 +44,9 @@ include_once('../db/conexao.php');
             <?php } ?>
         </select>
 		
-		<input type="text" name="senha" maxlength=20 placeholder="Senha">
+		<input type="password" name="senha" maxlength=20 placeholder="Senha">
 
-		<input type="text" name="confirmarsenha" maxlength=20 placeholder="Confirmar Senha">
+		<input type="password" name="confirmarsenha" maxlength=20 placeholder="Confirmar Senha">
 		
 		<div id="divisao"></div>
 
