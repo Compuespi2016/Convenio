@@ -22,11 +22,10 @@
     if(isset($_POST['aluno'])){
         $id_aluno = $_POST['aluno'];
         $id_empresa = $_POST['empresa'];
-        $id_curso = $_POST['curso'];
         $id_professor = $_SESSION['id'];
 
 
-        $query = "INSERT INTO vinculo (aluno_id,empresa_id,curso_id,professor_id,data) VALUES (".$id_aluno.",".$id_empresa.",".$id_curso.",".$id_professor.",SYSDATE())";
+        $query = "INSERT INTO vinculo (aluno_id,empresa_id,professor_id,data,status) VALUES (".$id_aluno.",".$id_empresa.",".$id_professor.","."SYSDATE(),'pendente')";
         echo $query;
         $query = mysqli_query($conecta,$query);
         if($query){

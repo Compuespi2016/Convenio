@@ -25,7 +25,6 @@ include_once('db/conexao.php');
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
