@@ -80,8 +80,6 @@ include_once('../db/conexao.php');
 
 		<button type="submit">Cadastrar</button>
 	</form>
-<script type="text/javascript">
-</script>
 
 </body>
 </html>

@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 Prezado(a) Responsável da empresa _______________________,
 Apresentamos a V.Sa o aluno(a) __________________________________ 
 do Curso__________________________________________, período_______ 
 devidamente matriculado(a) e frequentando a 
 disciplina______________________________, para realizar atividades 
 do Estágio Curricular Supervisionado Obrigatório nessa Instituição de
+=======
+Prezado(a) Responsável da empresa _______________________,
+Apresentamos a V.Sa o aluno(a) __________________________________ 
+do Curso__________________________________________, período_______ 
+devidamente matriculado(a) e frequentando a 
+disciplina______________________________, para realizar atividades 
+do Estágio Curricular Supervisionado Obrigatório nessa Instituição de
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 Ensino/Empresa.

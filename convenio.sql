@@ -1,4 +1,5 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 4.5.2
 -- http://www.phpmyadmin.net
 --
@@ -8,6 +9,19 @@
 -- Versão do PHP: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+=======
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 04-Out-2018 às 21:30
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 SET time_zone = "+00:00";
 
 
@@ -17,13 +31,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD
 -- Banco de dados: `convenio`
+=======
+-- Database: `convenio`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura para tabela `convenios`
+=======
+-- Estrutura da tabela `aluno`
+--
+
+CREATE TABLE `aluno` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `curso_id` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `convenios`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 CREATE TABLE `convenios` (
@@ -35,7 +69,11 @@ CREATE TABLE `convenios` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura para tabela `curso`
+=======
+-- Estrutura da tabela `curso`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 CREATE TABLE `curso` (
@@ -44,7 +82,11 @@ CREATE TABLE `curso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- Fazendo dump de dados para tabela `curso`
+=======
+-- Extraindo dados da tabela `curso`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 INSERT INTO `curso` (`id`, `nome`) VALUES
@@ -75,6 +117,7 @@ INSERT INTO `curso` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura para tabela `solicitacoes`
 --
 
@@ -96,6 +139,22 @@ INSERT INTO `solicitacoes` (`id`, `id_empresa`, `id_curso`) VALUES
 
 --
 -- Estrutura para tabela `user_empresa`
+=======
+-- Estrutura da tabela `professor`
+--
+
+CREATE TABLE `professor` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `curso_id` int(11) NOT NULL,
+  `senha` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user_empresa`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 CREATE TABLE `user_empresa` (
@@ -113,7 +172,11 @@ CREATE TABLE `user_empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- Fazendo dump de dados para tabela `user_empresa`
+=======
+-- Extraindo dados da tabela `user_empresa`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 INSERT INTO `user_empresa` (`id`, `nome`, `senha`, `cnpj`, `cpf`, `ramo`, `endereco`, `telefone`, `telefone_dono`, `email`, `dono`) VALUES
@@ -127,7 +190,11 @@ INSERT INTO `user_empresa` (`id`, `nome`, `senha`, `cnpj`, `cpf`, `ramo`, `ender
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura para tabela `user_preg`
+=======
+-- Estrutura da tabela `user_preg`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 CREATE TABLE `user_preg` (
@@ -136,29 +203,67 @@ CREATE TABLE `user_preg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- Fazendo dump de dados para tabela `user_preg`
+=======
+-- Extraindo dados da tabela `user_preg`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 
 INSERT INTO `user_preg` (`id`, `senha`) VALUES
 (1, 'admin');
 
+<<<<<<< HEAD
 --
 -- Índices de tabelas apagadas
 --
 
 --
 -- Índices de tabela `convenios`
+=======
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vinculo`
+--
+
+CREATE TABLE `vinculo` (
+  `id` int(11) NOT NULL,
+  `aluno_id` int(11) NOT NULL,
+  `professor_id` int(11) NOT NULL,
+  `empresa_id` int(11) NOT NULL,
+  `data_vinculo` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `aluno`
+--
+ALTER TABLE `aluno`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `convenios`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 ALTER TABLE `convenios`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Índices de tabela `curso`
+=======
+-- Indexes for table `curso`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Índices de tabela `solicitacoes`
 --
 ALTER TABLE `solicitacoes`
@@ -166,17 +271,31 @@ ALTER TABLE `solicitacoes`
 
 --
 -- Índices de tabela `user_empresa`
+=======
+-- Indexes for table `professor`
+--
+ALTER TABLE `professor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_empresa`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 ALTER TABLE `user_empresa`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Índices de tabela `user_preg`
+=======
+-- Indexes for table `user_preg`
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 --
 ALTER TABLE `user_preg`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
@@ -205,6 +324,60 @@ ALTER TABLE `user_empresa`
 --
 ALTER TABLE `user_preg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+-- Indexes for table `vinculo`
+--
+ALTER TABLE `vinculo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `aluno`
+--
+ALTER TABLE `aluno`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `convenios`
+--
+ALTER TABLE `convenios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `professor`
+--
+ALTER TABLE `professor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_empresa`
+--
+ALTER TABLE `user_empresa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user_preg`
+--
+ALTER TABLE `user_preg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `vinculo`
+--
+ALTER TABLE `vinculo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+>>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
