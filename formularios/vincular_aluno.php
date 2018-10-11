@@ -1,10 +1,10 @@
 <?php include_once("../db/conexao.php"); ?>
 <?php
 	session_start();
-	$curso = "SELECT * FROM curso";
+	$curso = "SELECT curso.nome FROM curso,professor WHERE professor.curso_id=curso.id";
     $curso = mysqli_query($conecta,$curso);
     
-    $aluno = "SELECT * FROM aluno";
+    $aluno = "SELECT aluno.id,aluno.nome FROM aluno,professor WHERE aluno.curso_id = professor.curso_id GROUP BY aluno.id";
     $aluno = mysqli_query($conecta,$aluno);
     
     $empresa = "SELECT * FROM user_empresa";
@@ -60,12 +60,8 @@
                     <option value="<?php echo $empresas['id']; ?>"><?php echo $empresas['nome']; ?></option>
                 <?php } ?>
             </select>
-
-            <select name='curso'>
-                <?php while($cursos = mysqli_fetch_assoc($curso)){ ?>
-                    <option value="<?php echo $cursos['id']; ?>"><?php echo $cursos['nome']; ?></option>
-                <?php } ?>
-            </select>
+            <?php $curso = mysqli_fetch_assoc($curso); ?>
+            <input type="text" name="curso" value="<?php echo $curso['nome'] ?>" disabled style="color:white;width:400px;">
 			<button type="submit">Vincular aluno</button>
 		</form>
 	</body>

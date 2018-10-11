@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id group by user_empresa.nome ";
+$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND vinculo.status='aceito'";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
@@ -20,7 +20,7 @@ if($data === FALSE){
 	<meta charset="utf-8">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
-	<title>Empresas Conveniadas</title>
+	<title>Alunos Vinculados</title>
 </head>
 <body>
 	<?php require('include/topo.php'); ?>
@@ -32,10 +32,11 @@ if($data === FALSE){
 		<table>
 			<thead>
 				<tr>
-					<th>Nome Empresa</th>
-					<th>CNPJ Empresa</th>
-					<!--<th>Aceitar</th>
-					<th>Recusar</th> -->
+					<th>Aluno</th>
+					<th>Empresa</th>
+					<th>Professor</th>
+					<th>Data</th>
+
 				</tr>
 			</thead>
 			<tbody>
@@ -43,8 +44,10 @@ if($data === FALSE){
 	while($dados = mysqli_fetch_assoc($data)){
 ?>
 				<tr>
-					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
-					<td style="text-align:center"> <?php echo $dados['cnpj'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['nome_aluno'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['nome_empresa'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['nome_professor'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['data'];?> </td>
 				</tr>
 <?php
 	}
