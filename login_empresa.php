@@ -112,5 +112,4 @@ include_once('db/conexao.php');
 	</form>
 
 </body>
->>>>>>> 19ebdafa832cf1d4eec498de2d13c6aa5e772922
 </html>

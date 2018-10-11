@@ -17,7 +17,9 @@
 	<?php require('include/topo.php') ?>
     <div id="menu">
         <a href="formularios/vincular_aluno.php">Vincular aluno</a>
+        <a href="lista_vinculo_professor.php"></a>
         <a href="include/logout.php">Sair</a>
+
     </div>
 </body>
 </html>
