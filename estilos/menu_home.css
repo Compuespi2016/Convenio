@@ -1,0 +1,28 @@
+div#menu{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+}
+div#menu a{
+    background-color:#2268b2;
+    padding:20px;
+    font-size:23px;
+    text-decoration: none;
+    color:white;
+    text-align:center;
+    width:auto;
+    align-self: center;
+    margin-bottom:10px;
+}
+
+div#menu p{
+    text-align:center;
+    background-color: rgba(0,0,0,.5);
+    color:white;
+    font-size:25px;
+    padding:20px;
+}
+
+div#menu a:hover{
+    background-color:black;
+}

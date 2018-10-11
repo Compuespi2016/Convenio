@@ -1,5 +1,6 @@
 <?php include_once("../db/conexao.php"); ?>
 <?php
+	session_start();
 	$query = "SELECT * FROM curso";
 	$query = mysqli_query($conecta,$query);
 	if(!$query){
@@ -7,12 +8,14 @@
 	}
 	if(isset($_POST["cursos"])){
 		$checkbox = $_POST["cursos"];
+		$cont=0;
 		foreach($checkbox as $valor){
 			$query_checkbox = "INSERT INTO solicitacoes (empresa_id,curso_id) VALUES (".$_SESSION["id"].",".$valor.")";
-
-			echo $valor;
-			$query_checkbox = mysqli_query($conecta,$query_checkbox);
+			$query_checkbox = mysqli_query($conecta,$query_checkbox);				
+?>
+<?php
 		}
+		header('location: ../home_empresa.php?cadastro=true');
 	}
 ?>
 
@@ -24,26 +27,21 @@
 		<link href="../estilos/cadastro_convenio.css" rel="stylesheet">
 	</head>
 	<body>
-		<header>
-			<div id="topo">
-				<a href="../index.php">
-				<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png"></a>
-			</div>
-			<div id="titulo">
-				<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
-				<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
-			</div>
-		</header>
+		<?php require('../include/topo.php') ?>
 		<form id="checkboxs" action="cadastro_convenio.php" method="POST">
 			<div id="check">
+				<p style="text-align:center">Cadastro de convênio</p>
+				<p style="text-align:left"> <font size="4">Selecione os cursos de interesse para estágio: </font> </p><br>
 				<?php while($dados = mysqli_fetch_assoc($query)) { ?>
-					<?php $id = $dados["id"]; ?>
-					<?php $nome = $dados["nome"]; ?>
-					<input type="checkbox" name="cursos[]" value="<?php echo $id ?>"><?php echo utf8_decode($nome); echo "<br>" ?>
+					<?php
+						$id = $dados["id"];
+						$nome = $dados["nome"]; 
+					?>
+					<input type="checkbox" name="cursos[]" value="<?php echo $id ?>"><?php echo utf8_decode($nome); ?><br>
 				<?php } ?>
 			</div>
 			
-			<input type="submit" value="Cadastrar">
+			<input type="submit" value="Solicitar">
 		</form>
 	</body>
 </html>

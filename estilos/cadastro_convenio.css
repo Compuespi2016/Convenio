@@ -1,6 +1,6 @@
 form#checkboxs{
 	display:inline-block;
-	width:30%;
+	width:auto;
 	height:auto;
 	overflow:visible;
 	padding:20px;
@@ -10,25 +10,42 @@ form#checkboxs{
 	padding:5px;
 	border:1px solid white;
 	border-radius:10px;
-	background-color:white;
+	background-color:rgba(0,0,0,.5);
+	color:white;
 }
+
 input[type="checkbox"]{
 	padding:20px;
 	margin-top:10px;
 	margin-bottom:10px;
-	margin-left:20px;
+	margin-left:30px;
 	color:white;
 	vertical-align: middle;
 }
+
+p#item{
+	color:white;
+	font-size:15px !important;
+	border-bottom:none !important;
+	display:inline !important;
+}
+
 input[type="submit"]{
-	margin-left:40%;
+	margin-left:35%;
 	padding:20px;
 	background-color:#2268b2;
 	border:none;
 	cursor:pointer;
 	margin-top:20px;
+	font-size:20px;
 }
+
 input[type="submit"]:hover{
 	background-color:black;
+	color:white;
+}
+
+#check p{
+	font-size:25px;
 	color:white;
 }

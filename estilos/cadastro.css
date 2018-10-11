@@ -78,3 +78,7 @@ div#titulo_divisao{
 	font-size:25px;
 	color:white;
 }
+
+form#cadastro select{
+	margin-bottom:20px;
+}

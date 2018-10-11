@@ -13,23 +13,13 @@
 	<meta charset="utf-8">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/cursos.css" rel="stylesheet">
+	<link href="estilos/lista_cursos.css" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<div id="topo">
-			<a href="index.php">
-				<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
-			</a>
-		</div>
-		<div id="titulo">
-			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
-			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
-		</div>
-	</header>
-
+	<?php require('include/topo.php') ?>
 	<ul id="cursos">
 		<?php while($dados = mysqli_fetch_assoc($query)){ ?>
-				<li><?php echo $dados ?></li>
+				<li><?php echo $dados["nome"] ?></li>
 		<?php } ?>
 	</ul>
 </body>

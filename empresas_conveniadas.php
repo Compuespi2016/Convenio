@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.id FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
+$query = "SELECT user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id group by user_empresa.nome ";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
@@ -20,12 +20,12 @@ if($data === FALSE){
 	<meta charset="utf-8">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
-	<title>Solicitações</title>
+	<title>Empresas Conveniadas</title>
 </head>
 <body>
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
-		<a href="empresas_conveniadas.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Empresas conveniadas ></a>
+	<!--	<a href="empresas_conveniadas.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Empresas conveniadas ></a> -->
 		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
@@ -33,9 +33,9 @@ if($data === FALSE){
 			<thead>
 				<tr>
 					<th>Nome Empresa</th>
-					<th>Visualizar cursos</th>
-					<th>Aceitar</th>
-					<th>Recusar</th>
+					<th>CNPJ Empresa</th>
+					<!--<th>Aceitar</th>
+					<th>Recusar</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -44,9 +44,7 @@ if($data === FALSE){
 ?>
 				<tr>
 					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
-					<td style="text-align:center"><a id="blue" href="lista_cursos.php?id=<?php echo $dados['id']; ?>">Listar</a></td>
-					<td style="text-align:center"><a id="green" href="aceita_convenio.php?id=<?php echo $dados['id']; ?>">Aceitar</a></td>
-					<td style="text-align:center"><a id="red" href="recusa_convenio.php?id=<?php echo $dados['id']; ?>">Recusar</a></td>
+					<td style="text-align:center"> <?php echo $dados['cnpj'];?> </td>
 				</tr>
 <?php
 	}

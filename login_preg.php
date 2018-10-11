@@ -5,11 +5,11 @@ include_once('db/conexao.php');
  		$senha = $_POST['senha'];
  		$query = "SELECT * FROM user_preg WHERE id = '$id' AND senha = '$senha' ";
  		$sql =  mysqli_query($conecta,$query) or die(mysqli_error());
-
+		$dados = mysqli_fetch_assoc($sql);
 		$row = mysqli_num_rows($sql);
 		if ($row > 0) {
 			session_start();
-			$_SESSION['id'] = mysqli_insert_id($conecta);
+			$_SESSION['id'] = $dados['id'];
 			echo "<center>Logado com sucesso, aguarde .... </center>";
 			header("location: home_preg.php");
 			exit();
@@ -42,25 +42,13 @@ include_once('db/conexao.php');
 	</script>
 </head>
 <body>
-	<header>
-		<div id="topo">
-			<a href="index.php">
-				<img src="http://www.uespi.br/site/wp-content/uploads/2015/01/logo-1.png">
-			</a>
-		</div>
-		<div id="titulo">
-			<p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
-			<p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
-		</div>
-	</header>
-<form id="login" action="login_preg.php" method="POST">
-	<div id="titulo_divisao">Login PREG</div>
-	<input type="text" name="id" placeholder="ID">
-	<input type="password" name="senha" placeholder="Senha">
-	<div id="divisao_login"></div>
-	<input type="submit" value="Logar">
-
-
-</form>	
+	<?php require('include/topo.php') ?>
+	<form id="login" action="login_preg.php" method="POST">
+		<div id="titulo_divisao">Login PREG</div>
+		<input type="text" name="id" placeholder="ID">
+		<input type="password" name="senha" placeholder="Senha">
+		<div id="divisao_login"></div>
+		<input type="submit" value="Logar">
+	</form>	
 </body>
 </html>
