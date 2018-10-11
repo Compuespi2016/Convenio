@@ -2,6 +2,7 @@ div#menu{
     display:flex;
     justify-content: center;
     flex-direction:column;
+    margin-top:50px;
 }
 div#menu a{
     background-color:#2268b2;
@@ -10,7 +11,7 @@ div#menu a{
     text-decoration: none;
     color:white;
     text-align:center;
-    width:auto;
+    width:300px;
     align-self: center;
     margin-bottom:10px;
 }

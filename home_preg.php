@@ -8,7 +8,10 @@
 <body>
 	<?php require('include/topo.php') ?>
 	<div id="menu">
-		<a href="solicitacoes.php">Solicitações</a>
+		<a href="solicitacoes.php">Solicitações Convênio</a>
+		<a href="solicitacoes_vinculo.php">Solicitações Vínculos</a>
+		<a href="empresas_conveniadas.php">Empresas Conveniadas</a>
+		<a href="alunos_vinculados.php">Alunos Vinculados</a>
 		<a href="include/logout.php">Sair</a>
 	</div>
 

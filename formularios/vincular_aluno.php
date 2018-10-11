@@ -48,12 +48,13 @@
 	<body>
 		<?php require('../include/topo.php') ?>
 		<form id="cadastro" action="vincular_aluno.php" method="POST">
+            <label style="color:white">Aluno</label>
             <select name='aluno'>
                 <?php while($alunos = mysqli_fetch_assoc($aluno)){ ?>
                     <option value="<?php echo $alunos['id']; ?>"><?php echo $alunos['nome']; ?></option>
                 <?php } ?>
             </select>
-            
+            <label style="color:white">Empresa</label>
             <select name='empresa'>
                 <?php while($empresas = mysqli_fetch_assoc($empresa)){ ?>
                     <option value="<?php echo $empresas['id']; ?>"><?php echo $empresas['nome']; ?></option>
