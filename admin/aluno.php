@@ -5,9 +5,11 @@ include_once('../db/conexao.php');
 		$matricula = $_POST['matricula'];
 		$periodo = $_POST['periodo'];
 		$curso = $_POST['curso'];
-		
 		$query = "INSERT INTO aluno (nome,matricula,curso_id,periodo) VALUES ('$nome','$matricula','$curso','$periodo')";
 		$query = mysqli_query($conecta,$query);
+		if(!$query){
+			echo mysqli_error($conecta);
+		}
 	}
 	$curso = "SELECT * FROM curso";
 	$curso = mysqli_query($conecta,$curso);
@@ -33,7 +35,7 @@ include_once('../db/conexao.php');
 		
 		<select name="curso" style="margin-top:20px">
             <?php while($cursos = mysqli_fetch_assoc($curso)) { ?>
-            	<option value='<?php $cursos['id']; ?>'><?php echo $cursos['nome']; ?></option>
+            	<option value="<?php echo $cursos['id']; ?>"><?php echo $cursos['nome']; ?></option>
             <?php } ?>
         </select>
 		
