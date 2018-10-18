@@ -44,9 +44,9 @@
         <?php }elseif($dados_empresa["recusado"] == '1')
         {
             ?>
-            <p>Declaramos que a sua solicitação de convênio para estágio foi recusada pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
+            <p>Declaramos que a sua solicitação de convênio para estágio foi <p style="color:crimson">recusada</p> pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
         <?php }else{ ?>
-            <p>Declaramos que a sua solicitação de convênio para estágio foi aprovada pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
+            <p>Declaramos que a sua solicitação de convênio para estágio foi <p style="color:lightgreen">aprovada</p> pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
         <?php }  ?>
         <a href="include/logout.php">Sair</a>
     </div>

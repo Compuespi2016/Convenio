@@ -4,7 +4,7 @@
 	$curso = "SELECT curso.nome FROM curso,professor WHERE professor.curso_id=curso.id";
     $curso = mysqli_query($conecta,$curso);
     
-    $aluno = "SELECT aluno.id,aluno.nome FROM aluno,professor WHERE aluno.curso_id = professor.curso_id GROUP BY aluno.id AND aluno.id NOT IN (SELECT vinculo.aluno_id FROM vinculo)";
+    $aluno = "SELECT aluno.id,aluno.nome FROM aluno,professor WHERE aluno.curso_id = professor.curso_id AND aluno.id NOT IN (SELECT vinculo.aluno_id FROM vinculo) GROUP BY aluno.id ";
     $aluno = mysqli_query($conecta,$aluno);
     
     $empresa = "SELECT * FROM user_empresa";

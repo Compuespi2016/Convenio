@@ -7,22 +7,27 @@ div#tabela{
 table{
     width:700px;
     background-color:rgba(0,0,0,.5);
-    padding:10px;
+    padding:20px;
+    border-radius:;
 }
 tr,td,th{
     text-align:center;
 }
 td{
     color:white;
+    margin-top:20px;
+    padding:30px;
+    text-transform: capitalize;
 }
 th{
     font-size:20px;
     color:white;
-    border-bottom:1px solid #2268b2;
+    border-bottom:1px solid #3498db;
     margin-bottom:5px;
+    padding:10px;
 }
 a#blue{
-    color:#2268b2;
+    color:#3498db;
 }
 a#green{
     color:lightgreen;

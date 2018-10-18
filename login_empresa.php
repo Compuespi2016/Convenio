@@ -28,7 +28,7 @@ include_once('db/conexao.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Login empresa</title>
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/login.css" rel="stylesheet">
 

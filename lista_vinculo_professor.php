@@ -53,7 +53,7 @@ if(!$data){
 
 					<?php
 					if ($dados['status'] == 'recusado') { ?>
-						<td style="color: red; text-align:center"> <?php echo $dados['status'];?> </td>
+						<td style="color: crimson; text-align:center"> <?php echo $dados['status'];?> </td>
 					<?php } ?>
 
 					<?php

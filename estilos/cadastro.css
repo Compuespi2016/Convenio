@@ -13,7 +13,7 @@
   }
 }
 body{
-	background-image: url("../imgs/uespi.jpg");
+	background-color: rgba(68, 68, 68, .05);
 	background-size: 100% 100%;
 }
 form#cadastro{
@@ -23,13 +23,13 @@ form#cadastro{
 	justify-content: center;
 	flex-direction: column;
 	align-content: center;
-	width:400px;
-	margin-left:35%;
+	width:550px;
+	margin-left:27%;
 	align-items: center;
 	padding:5px;
 	border: 1px solid black;
 	border-radius:10px;
-	background-color:rgba(0,0,0,.8);
+	background-color:rgba(0,0,0,.7);
 }
 
 input{
@@ -37,7 +37,7 @@ input{
 	border-right: none;
 	border-left: none;
 	border-top: none;
-	border-bottom: 1px solid #2268b2;
+	border-bottom: 1px solid #3498db;
 	margin-bottom:5px;
 	padding:10px;
 	color:white;

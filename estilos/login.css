@@ -8,7 +8,7 @@ form#login{
 	margin-left:35%;
 	padding:10px;
 	border-radius:10px;
-	background-color:rgba(0,0,0,.8);
+	background-color:rgba(0,0,0,.7);
 }
 
 input{
@@ -16,7 +16,7 @@ input{
 	border-right: none;
 	border-left: none;
 	border-top: none;
-	border-bottom: 1px solid #2268b2;
+	border-bottom: 1px solid #3498db;
 	margin-bottom:15px;
 	padding:10px;
 	height:40px;
