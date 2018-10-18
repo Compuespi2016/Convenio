@@ -47,7 +47,7 @@ if($data === FALSE){
 					<td style="text-align:center"> <?php echo $dados['nome_aluno'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['nome_empresa'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['nome_professor'];?> </td>
-					<td style="text-align:center"> <?php echo $dados['data'];?> </td>
+					<td style="text-align:center"> <?php echo date('d-m-Y', strtotime($dados['data'])); ?> </td>
 				</tr>
 <?php
 	}
