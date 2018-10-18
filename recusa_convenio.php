@@ -6,7 +6,7 @@
 	$update = "UPDATE user_empresa SET recusado='1' WHERE id=".$_GET["id"];
 	$update = mysqli_query($conecta,$update);
 	
-	if($query){
+	if($update){
 		header('location: solicitacoes.php');
 	}else{
 		echo "erro";

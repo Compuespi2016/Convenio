@@ -26,7 +26,7 @@ if(!$data){
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
 	<!--	<a href="empresas_conveniadas.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Empresas conveniadas ></a> -->
-		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+		<a href="home_professor.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
 		<table>
@@ -57,7 +57,7 @@ if(!$data){
 					<?php } ?>
 
 					<?php
-					if ($dados['status'] == 'aprovado') { ?>
+					if ($dados['status'] == 'aceito') { ?>
 						<td style="color:  lightgreen; text-align:center"> <?php echo $dados['status'];?> </td>
 					<?php } ?>
 					
