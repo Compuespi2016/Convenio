@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND vinculo.status='aceito' AND vinculo.status='pendente' AND vinculo.status='recusado'";
+$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND (vinculo.status='aceito' OR vinculo.status='pendente' OR vinculo.status='recusado')";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
