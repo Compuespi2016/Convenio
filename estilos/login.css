@@ -42,14 +42,14 @@ input[type="submit"]:hover{
 }
 
 div#divisao{
-	border-bottom:1px solid rgba(0,0,0,.1);
+	border-bottom:1px solid white;
 	width:400px;
 	padding:10px;
 	margin-bottom: 20px;
 }
 
 div#titulo_divisao{
-	border-bottom:1px solid rgba(0,0,0,.3);
+	border-bottom:1px solid white;
 	width:250px;
 	padding:10px;
 	margin-bottom: 20px;
@@ -59,7 +59,7 @@ div#titulo_divisao{
 }
 
 div#divisao_login{
-	border-bottom:1px solid rgba(0,0,0,.3);
+	border-bottom:1px solid white;
 	width:250px;
 	padding:10px;
 	margin-bottom: 20px;	

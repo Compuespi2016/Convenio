@@ -9,7 +9,7 @@ if(!isset($_SESSION['id'])) {
 }
 $query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id";
 $data = mysqli_query($conecta,$query);
-if($data === FALSE){
+if(!$data){
 	echo mysqli_error($conecta);
 }
 ?>

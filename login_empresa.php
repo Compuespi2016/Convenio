@@ -47,8 +47,8 @@ include_once('db/conexao.php');
 	
 	<form id="login" action="login_empresa.php" method="POST">
 		<div id="titulo_divisao">Login empresa</div>
-		<input type="text" name="id" placeholder="ID">
-		<input type="password" name="senha" placeholder="Senha">
+		<input type="text" name="id" placeholder="ID" maxlength="10">
+		<input type="password" name="senha" placeholder="Senha" maxlength="30">
 		<div id="divisao_login"></div>
 		<input type="submit" value="Logar">
 	</form>
