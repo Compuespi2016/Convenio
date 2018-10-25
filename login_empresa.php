@@ -10,6 +10,7 @@ include_once('db/conexao.php');
 		if ($row > 0) {
 			session_start();
 			$_SESSION['id'] = $dados["id"];
+			$_SESSION['nivel'] = 3;
 			header("location: home_empresa.php");
 			die();
 			//echo "<center>Logado com sucesso, aguarde .... </center>";

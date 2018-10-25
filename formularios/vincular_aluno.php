@@ -7,7 +7,7 @@
     $aluno = "SELECT aluno.id,aluno.nome FROM aluno,professor WHERE aluno.curso_id = professor.curso_id AND aluno.id NOT IN (SELECT vinculo.aluno_id FROM vinculo) GROUP BY aluno.id ";
     $aluno = mysqli_query($conecta,$aluno);
     
-    $empresa = "SELECT * FROM user_empresa";
+    $empresa = "SELECT * FROM user_empresa WHERE recusado='nao'";
     $empresa = mysqli_query($conecta,$empresa);
     
 	if(!$empresa){

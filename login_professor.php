@@ -11,6 +11,7 @@ include_once('db/conexao.php');
 		if ($row > 0) {
 			session_start();
 			$_SESSION['id'] = $dados['id'];
+			$_SESSION['nivel'] = 2;
 			header("location: home_professor.php");
 		}
 		else{
