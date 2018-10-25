@@ -6,12 +6,14 @@
 <head>
 	<meta charset="utf-8">
 	<link href="/convenio/estilos/popup.css" rel="stylesheet">
+	<link href="/convenio/estilos/topo.css" rel="stylesheet">
 </head>
 <body>
+	<?php include_once('include/topo.php'); ?>
 	<div id="popup">
 		<p id="alert">Atenção!</p>
-		<p>ID: <?php echo $_GET["id"]; ?> <br>Deverá ser utilizado para acessar o sistema.</p>
-		<button>Ir para login</button>
+		<p>O código de identificação da sua empresa é:  <b><?php echo $_GET["id"]; ?></b> <br><br>Este código deverá ser utilizado no campo ID para realizar login no sistema de convênio.</p>
+		<a href="login_empresa.php">Ir para login</a>
 	</div>
 </body>
 </html>

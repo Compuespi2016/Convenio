@@ -1,16 +1,5 @@
 <?php include_once('db/conexao.php'); ?>
 <?php
-    if(isset($_GET['id'])){
-        $id_empresa = $_GET['id'];
-        $verifica = "SELECT * FROM user_empresa WHERE id=".$_GET['id'];
-        $verifica = mysqli_query($conecta,$verifica);
-        $bool = mysqli_num_rows($verifica);
-        if($bool > 0){
-        ?>
-            <script>alert('O id: <?php echo $id_empresa; ?> deverá ser utilizado para login')</script>
-        <?php
-        }
-    }
     session_start();
     $query = "SELECT * FROM convenios WHERE empresa_id=".$_SESSION['id'];
     $query = mysqli_query($conecta,$query);
