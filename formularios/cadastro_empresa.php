@@ -68,7 +68,7 @@ include_once('../db/conexao.php');
 		
 		<input type="text" name="cpf" maxlength=11 placeholder="CPF">
 
-		<input type="text" name="email" maxlength=40 placeholder="Email do responsável">
+		<input type="email" name="email" maxlength=40 placeholder="Email do responsável">
 
 		<input type="text" name="telefone_dono" maxlength=11 placeholder="Telefone para contato">
 
