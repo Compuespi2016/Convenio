@@ -38,6 +38,7 @@
 </head>
 <body>
 	<?php require('include/topo.php') ?>
+    <p>Bem Vindo(a) <?php echo $dados_empresa['nome']; ?></p>
     <div id="menu">
         <?php if($resultado == 0 && $dados_empresa["recusado"] == '0'){ ?>
                 <a href="formularios/cadastro_convenio.php">Solicitação de convênio</a>
@@ -48,7 +49,10 @@
         <?php }else{ ?>
             <p>Declaramos que a sua solicitação de convênio para estágio foi <b style="color:lightgreen">aprovada</b> pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
         <?php }  ?>
+        <a href="cancelar_convenio.php" style="background-color: crimson">Cancelar Convênio</a>
         <a href="include/logout.php">Sair</a>
     </div>
 </body>
 </html>
+
+<!-- Mostra cancelar convenio apenas para os que estão cadastrados

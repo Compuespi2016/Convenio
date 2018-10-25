@@ -6,7 +6,12 @@
 	<link href="estilos/menu_home.css" rel="stylesheet">
 </head>
 <body>
-	<?php require('include/topo.php') ?>
+	<?php require('include/topo.php');
+	session_start();
+	?>
+	<div>
+		<?php echo "Bem Vindo PREG";  ?>
+	</div>
 	<div id="menu">
 		<a href="solicitacoes.php">Solicitações Convênio</a>
 		<a href="solicitacoes_vinculo.php">Solicitações Vínculos</a>
