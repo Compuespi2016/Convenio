@@ -1,8 +1,10 @@
 div#popup{
-	display:block;
-	width:200px;
+	display:flex;
+	width:300px;
 	height:auto;
-	background-color:rgba(220,20,60,.5);
+	margin-top:100px;
+	/*background-color:rgba(220,20,60,.5);*/
+	background-color: rgba(0,0,0,.5);
 	padding:10px;
 	justify-content: center;
 	flex-direction: column;
@@ -15,16 +17,17 @@ div#popup p{
 div#popup p#alert{
 	color: white;
 	font-weight: bold;
-	font-size:20px;
+	font-size:25px;
 	text-align: center;
 }
 div#popup a{
-	padding:5px;
+	padding:12px;
 	width:auto;
 	height:auto;
 	background-color: crimson;
 	color:white;
-	font-size:15px;
+	font-size:20px;
+	font-weight: bold;
 	align-self: center;
 	text-decoration: none;
 }

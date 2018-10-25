@@ -24,7 +24,8 @@ include_once('../db/conexao.php');
 ?>
 			<!--<script>alert('O id: <?php echo $id_empresa; ?> deverá ser utilizado para login')</script>-->
 <?php
-				header('location: ../home_empresa.php?id='.$id_empresa);
+				header('location: ../popup.php?id='.$id_empresa);
+				//header('location: ../home_empresa.php?id='.$id_empresa);
 			}
 			else{
 				
@@ -45,6 +46,24 @@ include_once('../db/conexao.php');
 	<link href="../estilos/popup.css" rel="stylesheet">
 	<link href="../estilos/cadastro.css" rel="stylesheet">
 	<link href="../estilos/topo.css" rel="stylesheet">
+	<script>
+		function formatarCampo(campoTexto) {
+		    if (campoTexto.value.length <= 11) {
+		        campoTexto.value = mascaraCpf(campoTexto.value);
+		    } else {
+		        campoTexto.value = mascaraCnpj(campoTexto.value);
+		    }
+		}
+		function retirarFormatacao(campoTexto) {
+		    campoTexto.value = campoTexto.value.replace(/(\.|\/|\-)/g,"");
+		}
+		function mascaraCpf(valor) {
+		    return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"\$1.\$2.\$3\-\$4");
+		}
+		function mascaraCnpj(valor) {
+		    return valor.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
+		}
+	</script>
 </head>
 <body>
 	<?php require('../include/topo.php') ?>
@@ -55,8 +74,8 @@ include_once('../db/conexao.php');
 		<input type="text" name="nome" maxlength=50 placeholder="Razão Social">
 		
 		<input type="text" name="ramo" maxlength=50 placeholder="Ramo">
-		
-		<input type="text" name="cnpj" maxlength=11 placeholder="CNPJ">
+
+		<input type="text" name="cnpj" placeholder="CNPJ" onkeypress="retirarFormatacao(this);" onblur="formatarCampo(this);" maxlength="14"/>
 		
 		<input type="text" name="endereco" maxlength=50 placeholder="Endereço da empresa">
 		
@@ -66,7 +85,7 @@ include_once('../db/conexao.php');
 		
 		<input type="text" name="dono" maxlength=50 placeholder="Nome do responsável">
 		
-		<input type="text" name="cpf" maxlength=11 placeholder="CPF">
+		<input type="text" name="cpf" placeholder="CPF" onkeypress="retirarFormatacao(this);" onblur="formatarCampo(this);" maxlength="14"/>
 
 		<input type="email" name="email" maxlength=40 placeholder="Email do responsável">
 
