@@ -1,7 +1,7 @@
 <?php include_once("../db/conexao.php"); ?>
 <?php
 	session_start();
-	$curso = "SELECT curso.nome FROM curso,professor WHERE professor.curso_id=curso.id";
+	$curso = "SELECT curso.nome FROM curso,professor WHERE professor.curso_id=curso.id AND professor.id=".$_SESSION['id'];
     $curso = mysqli_query($conecta,$curso);
     
     $aluno = "SELECT aluno.id,aluno.nome FROM aluno,professor WHERE aluno.curso_id = professor.curso_id AND aluno.id NOT IN (SELECT vinculo.aluno_id FROM vinculo) GROUP BY aluno.id ";
@@ -9,7 +9,8 @@
     
     $empresa = "SELECT * FROM user_empresa WHERE recusado='nao'";
     $empresa = mysqli_query($conecta,$empresa);
-    
+
+
 	if(!$empresa){
 		echo mysqli_error($conecta);
     }
@@ -27,15 +28,13 @@
 
         $query = "INSERT INTO vinculo (aluno_id,empresa_id,professor_id,data,status) VALUES (".$id_aluno.",".$id_empresa.",".$id_professor.","."SYSDATE(),'pendente')";
         echo $query;
-        $query = mysqli_query($conecta,$query);
-        if($query){
-            header('location: ../home_professor.php?cadastro=true');
-        }else{
-            echo mysqli_error($conecta);
-        }
+        //$query = mysqli_query($conecta,$query);
+        //if($query){
+        //    header('location: ../home_professor.php?cadastro=true');
+        //}else{
+        //    echo mysqli_error($conecta);
+        //}
     }
-
-    
 ?>
 
 <!DOCTYPE hmtl>
@@ -61,7 +60,7 @@
                 <?php } ?>
             </select>
             <?php $curso = mysqli_fetch_assoc($curso); ?>
-            <input type="text" name="curso" value="<?php echo $curso['nome'] ?>" disabled style="color:white;width:400px;">
+            <input type="text" name="curso" value="<?php echo utf8_encode($curso['nome']) ?>" disabled style="color:white;width:400px;">
 			<button type="submit">Vincular aluno</button>
 		</form>
 	</body>

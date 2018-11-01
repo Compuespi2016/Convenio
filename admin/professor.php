@@ -7,11 +7,11 @@ include_once('../db/conexao.php');
 		$senha = $_POST['senha'];
 		$confirmarsenha = $_POST['confirmarsenha'];
 		
-		$query = "INSERT INTO professor (nome,matricula,curso_id,senha) VALUES ('$nome','$matricula','$curso','$senha')";
+		$query = "INSERT INTO professor (nome,matricula,curso_id,senha) VALUES ('$nome','$matricula',".$curso.",'$senha')";
 		if($senha == $confirmarsenha){
 			$query = mysqli_query($conecta,$query);	
 		}else{
-			alert('Senha é diferente de confimar senha');
+			alert('Senha é diferente de confirmar senha');
 		}
 	}
 	$curso = "SELECT * FROM curso";
@@ -40,7 +40,7 @@ include_once('../db/conexao.php');
 		
 		<select name="curso" style="margin-top:20px">
             <?php while($cursos = mysqli_fetch_assoc($curso)) { ?>
-            	<option value='<?php $cursos['id']; ?>'><?php echo $cursos['nome']; ?></option>
+            	<option value='<?php echo $cursos['id']; ?>'><?php echo $cursos['nome']; ?></option>
             <?php } ?>
         </select>
 		

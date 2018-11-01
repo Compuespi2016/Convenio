@@ -19,7 +19,7 @@
 	<?php require('include/topo.php') ?>
 	<ul id="cursos">
 		<?php while($dados = mysqli_fetch_assoc($query)){ ?>
-				<li><?php echo $dados["nome"] ?></li>
+				<li><?php echo utf8_encode($dados["nome"]) ?></li>
 		<?php } ?>
 	</ul>
 </body>
