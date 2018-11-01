@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.id FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
+$query = "SELECT user_empresa.nome,user_empresa.id,user_empresa.ramo,user_empresa.telefone,user_empresa.cnpj,user_empresa.endereco,user_empresa.dono FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
@@ -33,6 +33,12 @@ if($data === FALSE){
 			<thead>
 				<tr>
 					<th>Nome Empresa</th>
+					<th>Ramo</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>CNPJ</th>
+					<th>Endereço</th>
+					<th>Responsável</th>
 					<th>Visualizar cursos</th>
 					<th>Aceitar</th>
 					<th>Recusar</th>
@@ -44,6 +50,12 @@ if($data === FALSE){
 ?>
 				<tr>
 					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['ramo'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['telefone'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['email'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['cnpj'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['endereco'];?> </td>
+					<td style="text-align:center"> <?php echo $dados['dono'];?> </td>
 					<td style="text-align:center"><a id="blue" href="lista_cursos.php?id=<?php echo $dados['id']; ?>">Listar</a></td>
 					<td style="text-align:center"><a id="green" href="aceita_convenio.php?id=<?php echo $dados['id']; ?>">Aceitar</a></td>
 					<td style="text-align:center"><a id="red" href="recusa_convenio.php?id=<?php echo $dados['id']; ?>">Recusar</a></td>

@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id group by user_empresa.nome ";
+$query = "SELECT user_empresa.id,user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id group by user_empresa.nome ";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
@@ -34,6 +34,7 @@ if($data === FALSE){
 				<tr>
 					<th>Nome Empresa</th>
 					<th>CNPJ Empresa</th>
+					<th>Encerrar convênio</th>
 					<!--<th>Aceitar</th>
 					<th>Recusar</th> -->
 				</tr>
@@ -45,6 +46,7 @@ if($data === FALSE){
 				<tr>
 					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['cnpj'];?> </td>
+					<td style="text-align:center"><a href="cancelar_convenio.php?id=<?php echo $dados['id']; ?>">Cancelar convênio</a></td>
 				</tr>
 <?php
 	}
