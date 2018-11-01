@@ -31,13 +31,18 @@ if($data === FALSE){
 			<thead>
 				<tr>
 					<th>Nome do aluno</th>
-					<th>Nome do professor</th>
 					<?php if($_SESSION['nivel'] == 3){ ?>
+						<th>Nome do professor</th>
 						<th>Atualizar frequência</th>
 					<?php } ?>
 					<th>Presenças</th>
 					<th>Faltas</th>
 					<th>Porcentagem de frequência</th>
+					<?php  if($_SESSION['nivel'] == 2) {?>
+						<th>Aprovar frequência</th>
+						<th>Informar Problema</th>
+					<?php } ?>
+
 				</tr>
 			</thead>
 			<tbody>
@@ -46,13 +51,18 @@ if($data === FALSE){
 ?>
 				<tr>
 					<td style="text-align:center"> <?php echo $dados['nome_aluno'];?> </td>
-					<td style="text-align:center"> <?php echo $dados['nome_professor'];?> </td>
+					
 					<?php if($_SESSION['nivel'] == 3){ ?>
+						<td style="text-align:center"> <?php echo $dados['nome_professor'];?> </td>
 						<td style="text-align:center"><a id="blue" href="atualizar_frequencia.php?id=<?php echo $dados['id_aluno']; ?>">Atualizar frequência</a></td>
 					<?php } ?>
-					<td style="text-align:center"><?php echo $dados['presencas']; ?></td>
-					<td style="text-align:center"><?php echo $dados['faltas']; ?></td>
-					<td style="text-align:center"><?php echo $dados['porcentagem']; ?></td>
+						<td style="text-align:center"><?php echo $dados['presencas']; ?></td>
+						<td style="text-align:center"><?php echo $dados['faltas']; ?></td>
+						<td style="text-align:center"><?php echo $dados['porcentagem']; ?></td>
+					<?php  if($_SESSION['nivel'] == 2){ ?>
+						<td style="text-align:center"><a id="blue" href="aprovar_frequencia.php?id=<?php echo $dados['id_aluno']; ?>&&aprovado=true">Aprovar frequência</a></td>
+						<td style="text-align:center"><a id="blue" href="aprovar_frequencia.php?id=<?php echo $dados['id_aluno']; ?>&&recusado=true">Informar Problema</a></td>
+					<?php } ?>
 				</tr>
 <?php
 		}
