@@ -15,6 +15,8 @@
 ?>
 <?php
 		}
+		$update_recusado = "UPDATE user_empresa SET recusado = 'pendente' WHERE id=".$_SESSION['id'];
+		$update_recusado = mysqli_query($conecta,$update_recusado);
 		header('location: ../home_empresa.php?cadastro=true');
 	}
 ?>
@@ -37,7 +39,7 @@
 						$id = $dados["id"];
 						$nome = $dados["nome"]; 
 					?>
-					<input type="checkbox" name="cursos[]" value="<?php echo $id ?>"><?php echo utf8_decode($nome); ?><br>
+					<input type="checkbox" name="cursos[]" value="<?php echo $id ?>"><?php echo utf8_encode($nome); ?><br>
 				<?php } ?>
 			</div>
 			

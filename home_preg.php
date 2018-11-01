@@ -9,9 +9,8 @@
 	<?php require('include/topo.php');
 	session_start();
 	?>
-	<div>
-		<?php echo "Bem Vindo PREG";  ?>
-	</div>
+	<br>
+	<h2>Bem Vindo <strong><big>PREG</big></strong>,</h2>
 	<div id="menu">
 		<a href="solicitacoes.php">Solicitações Convênio</a>
 		<a href="solicitacoes_vinculo.php">Solicitações Vínculos</a>

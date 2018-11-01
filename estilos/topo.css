@@ -3,10 +3,10 @@ body{
 }
 header{
 	position:relative;
-	display:flex;
+	display:block;
 	flex-direction: column;
 	width:100%;
-	height:auto;
+	height:300px;
 	margin-bottom:10px;
 }
 #topo{
@@ -24,17 +24,24 @@ header{
 #titulo{
 	flex-direction: column;
 	background-color:#2268b2;
+	padding-top:20px;
+	padding-bottom:20px;
+	height:120px;
 }
 #titulo p#setor{
 	color:white;
 	font-size:25px;
-	left:0;
 	align-self: flex-start;
 	margin-left:20px;
+	text-align: left;
+	font-weight: bold;
+
 }
 #titulo p#convenio_estagio{
 	color:white;
 	font-size:17px;
 	align-self: flex-start;
 	margin-left:20px;
+	text-align: left;
+	font-weight: bold;
 }

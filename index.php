@@ -10,9 +10,10 @@
 	<?php require('include/topo.php') ?>
 
 	<div id="sec_title">
-		<h3>Efetue login</h3>
+		<h2>Efetue login</h2>
 	</div>
-	<div id="setores">
+	<br>
+	<div id="setores" align="center">
 		<a href="login_preg.php">PREG</a>
 		<a href="login_empresa.php">Empresa</a>
 		<a href="login_professor.php">Professor</a>

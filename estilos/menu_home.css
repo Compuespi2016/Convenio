@@ -27,3 +27,8 @@ div#menu p{
 div#menu a:hover{
     background-color:black;
 }
+
+h2{
+    color: #1462BB;
+    font-weight: normal;
+}
