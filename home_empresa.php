@@ -40,7 +40,6 @@
             <p>Declaramos que a sua solicitação de convênio para estágio foi <b style="color:lightgreen">aprovada</b> pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, dentro dos termos da legislação aplicável.</p>
         <?php }elseif($dados_empresa["recusado"] == 'pendente'){  ?>
             <p>Declaramos que a sua solicitação de convênio para estágio está <b style="color:yellow">Em análise</b> pela PREG - Pro-Reitoria de Ensino e Graduação da Universidade Estadual do Piauí - UESPI, em breve você receberá uma resposta</p>
-        <?php } ?>
 
         <?php }elseif($dados_empresa["motivo"] != ''){ ?>
             <p><?php echo $dados_empresa["motivo"]; ?></p>
@@ -48,9 +47,10 @@
 
         <?php if($dados_empresa["recusado"] == 'nao'){ ?>
             <a href="cancelar_convenio.php" style="background-color: crimson">Cancelar Convênio</a>
-        <?php if($dados_empresa["recusado"] == 'pendente' || $dados_empresa["recusado"] == 'nao'){ ?>
+        <?php }if($dados_empresa["recusado"] == 'pendente'){ ?>
             <a href="desfazer_convenio_empresa.php" style="background-color: crimson">Desfazer Convênio</a>
         <?php } ?>
+        <a href="frequencia.php">Frequencia Aluno</a>
         <a href="include/logout.php">Sair</a>
     </div>
 </body>
