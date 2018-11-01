@@ -10,6 +10,12 @@ $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
 }
+
+$dados_aluno = mysqli_fetch_assoc($data);
+
+$presencas = 0;
+$faltas = 0;
+$porcentagem = 0;
 if(isset($_GET['id'])){
 	$presencas = $_POST['presencas'];
 	$faltas = $_POST['faltas'];
@@ -32,14 +38,14 @@ if(isset($_GET['id'])){
 		<a href="#" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Alunos Vinculados ></a>
 		<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
-	<h1>Aluno: <?php echo $dados['nome_aluno']; ?></h1>
+	<h1>Aluno: <?php echo $dados_aluno['nome_aluno']; ?></h1>
 	<form action="atualizar_frequencia.php" method="POST">
 		<label for="presencas">Presenças</label>
-		<input type="number" placeholder="Presenças" value="<?php echo $dados['presencas']; ?>">
+		<input type="number" placeholder="Presenças" value="<?php echo $dados_aluno['presencas']; ?>">
 		<label for="faltas">Faltas</label>
-		<input type="number" placeholder="Faltas" value="<?php echo $dados['faltas']; ?>">
+		<input type="number" placeholder="Faltas" value="<?php echo $dados_aluno['faltas']; ?>">
 		<label for="porcentagem">Porcentagem</label>
-		<p name="porcentagem"><?php echo $dados['porcentagem']; ?></p>
+		<p name="porcentagem"><?php echo $dados_aluno['porcentagem']; ?></p>
 		<button type="submit">Atualizar</button>
 	</form>
 </body>

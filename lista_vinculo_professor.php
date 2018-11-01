@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id";
+$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,vinculo.motivo motivo,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id";
 $data = mysqli_query($conecta,$query);
 if(!$data){
 	echo mysqli_error($conecta);
@@ -35,8 +35,7 @@ if(!$data){
 					<th>Aluno</th>
 					<th>Empresa</th>
 					<th>Status</th>
-					
-
+					<th>Motivo</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,7 +59,7 @@ if(!$data){
 					if ($dados['status'] == 'aceito') { ?>
 						<td style="color:  lightgreen; text-align:center"> <?php echo $dados['status'];?> </td>
 					<?php } ?>
-					
+					<td style="text-align:center"> <?php echo $dados['motivo']; ?></td>
 				</tr>
 <?php
 	}
