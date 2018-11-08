@@ -23,7 +23,7 @@
 <body>
 	<?php require('include/topo.php') ?>
 	<form action="recusa_vinculo.php?id=<?php echo $_GET['id']; ?>" method="POST">
-		<input type="text" placeholder="Motivo" name="motivo" maxlength="200">
+		<input type="text" style="color: black" placeholder="Motivo" name="motivo" maxlength="200">
 		<button type="submit">Confirmar</button>
 	</form>
 </body>

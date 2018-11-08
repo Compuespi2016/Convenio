@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.nome,user_empresa.id,user_empresa.ramo,user_empresa.telefone,user_empresa.cnpj,user_empresa.endereco,user_empresa.dono FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
+$query = "SELECT user_empresa.nome,user_empresa.id,user_empresa.ramo,user_empresa.telefone,user_empresa.email,user_empresa.cnpj,user_empresa.endereco,user_empresa.dono FROM user_empresa,solicitacoes WHERE user_empresa.id = solicitacoes.empresa_id GROUP BY user_empresa.nome";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);
