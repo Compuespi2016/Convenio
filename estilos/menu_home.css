@@ -2,7 +2,7 @@ div#menu{
     display:flex;
     justify-content: center;
     flex-direction:column;
-    margin-top:50px;
+    
 }
 div#menu a{
     background-color:#2268b2;

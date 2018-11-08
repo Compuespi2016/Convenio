@@ -38,7 +38,9 @@ if(isset($_POST['presencas'])){
 <body>
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
-		<a href="#" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Alunos Vinculados ></a>
+		<?php if($_SESSION['nivel'] == 3){ ?>
+			<a href="frequecia.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Frequência ></a>
+		<?php } ?>
 		<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<h1>Aluno: <?php echo $dados_aluno['nome_aluno']; ?></h1>
