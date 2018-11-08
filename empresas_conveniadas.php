@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) {
 }else{
 	
 }
-$query = "SELECT user_empresa.id,user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id group by user_empresa.nome ";
+$query = "SELECT user_empresa.id,user_empresa.nome,user_empresa.cnpj FROM user_empresa,convenios where user_empresa.id = convenios.empresa_id and user_empresa.recusado = 'nao' group by convenios.empresa_id";
 $data = mysqli_query($conecta,$query);
 if($data === FALSE){
 	echo mysqli_error($conecta);

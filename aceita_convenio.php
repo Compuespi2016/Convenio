@@ -16,7 +16,7 @@
 			echo mysqli_error($deleta);
 		}
 
-		$descricao = "UPDATE user_empresa SET motivo='' WHERE id=".$_GET['id'];
+		$descricao = "UPDATE user_empresa SET motivo='',recusado='nao' WHERE id=".$_GET['id'];
 		$descricao = mysqli_query($conecta,$descricao);
 	}
 	header('location: solicitacoes.php');
