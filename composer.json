@@ -1,0 +1,24 @@
+{
+    "name": "root/convenio",
+    "description": "convenio phpunit",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^5"
+    },
+    "license": "UESPI",
+    "authors": [
+        {
+            "name": "Compuespi2016",
+            "email": "computacaouespi2016@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Apteles\\Acme\\":"src/"
+        }
+    },
+    "scripts":{
+    	"test":"vendor/bin/phpunit"
+    },
+    "require": {}
+}

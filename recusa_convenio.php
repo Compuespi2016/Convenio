@@ -9,8 +9,7 @@
 		$update = mysqli_query($conecta,$update);
 		
 		if($update){
-		//	header('location: solicitacoes.php');
-			echo "deu certo";
+			header('location: solicitacoes.php');
 		}else{
 			echo "erro";
 		}
