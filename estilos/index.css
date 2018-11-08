@@ -42,9 +42,9 @@ div#cadastrar{
 	font-size:14px;
 	align-self: center;
 	padding:5px;
-	width:300px;
+	width:100%;
 	border-bottom: 1px solid #2268b2;
-	margin-left:40%;
+	text-align: center;
 
 }
 div#cadastrar a{
