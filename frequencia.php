@@ -6,7 +6,7 @@ if(!isset($_SESSION['id'])) {
 	exit();
 }
 if($_SESSION['nivel'] == 3){
-	$query = "SELECT vinculo.id id_vinculo, vinculo.presencas,vinculo.faltas,vinculo.porcentagem,aluno.nome nome_aluno, aluno.id id_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id =".$_SESSION['id']." AND user_empresa.id=vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND vinculo.status='aceito'";
+	$query = "SELECT vinculo.id id_vinculo, vinculo.presencas,vinculo.faltas,vinculo.porcentagem,vinculo.plano_id,aluno.nome nome_aluno, aluno.id id_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id =".$_SESSION['id']." AND user_empresa.id=vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND vinculo.status='aceito'";
 }else{
 	$query = "SELECT vinculo.id id_vinculo, vinculo.presencas,vinculo.faltas,vinculo.porcentagem,aluno.nome nome_aluno, aluno.id id_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE vinculo.professor_id =".$_SESSION['id']." AND user_empresa.id=vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND vinculo.status='aceito'";
 }
@@ -40,7 +40,7 @@ if(isset($_GET['atualizado'])){
 				<a href="home_professor.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 		<?php }else{ ?>
 				<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
-		 <?php  } ?>
+		<?php } ?>
 		
 	</div>
 	<div id="tabela">
@@ -56,6 +56,7 @@ if(isset($_GET['atualizado'])){
 					<th>Porcentagem de frequência</th>
 					<?php if($_SESSION['nivel'] == 3){ ?>
 						<th>Atualizar frequência</th>
+						<th>Plano de estágio</th>
 					<?php } ?>
 					<?php if($_SESSION['nivel'] == 2) {?>
 						<th>Aprovar frequência</th>
@@ -84,6 +85,11 @@ if(isset($_GET['atualizado'])){
 						<?php } ?>
 						<?php if($_SESSION['nivel'] == 3){ ?>
 							<td style="text-align:center"><a id="blue" href="atualizar_frequencia.php?id=<?php echo $dados['id_aluno']; ?>"><img src="imgs/atualizar.png" style="width:32px;height:32px" /></a></td>
+							<?php if($dados['plano_id'] == 0){ ?>
+								<td><a href="formularios/criar_plano_estagio.php?id_aluno=<?php echo $dados['id_aluno']; ?>"><img src="imgs/lista.png" style="width:32px;height:32px" /></a></td>
+							<?php }else{ ?>
+								<td><a href="formularios/atualizar_plano_estagio.php?id_aluno=<?php echo $dados['id_aluno']; ?>"><img src="imgs/lista.png" style="width:32px;height:32px" /></a></td>
+							<?php } ?>
 						<?php } ?>
 					<?php  if($_SESSION['nivel'] == 2){ ?>
 						<td style="text-align:center"><a id="blue" href="aprovar_frequencia.php?id=<?php echo $dados['id_vinculo']; ?>"><img src="imgs/ok.png" style="width:32px; height:32px" /></a></td>

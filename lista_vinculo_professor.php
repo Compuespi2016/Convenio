@@ -37,6 +37,7 @@ if(!$data){
 					<th>Status</th>
 					<th>Motivo</th>
 					<th>Situação de frequência</th>
+					<th>Plano de Estágio</th>
 				</tr>
 			</thead>
 			<tbody>
