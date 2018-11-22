@@ -32,3 +32,11 @@ h2{
     color: #1462BB;
     font-weight: normal;
 }
+
+p#bemvindo{
+    color: #2268b2;
+    font-size: 36;
+    font-weight: bolder;
+    padding: 10px;
+    padding-left: 30px;
+}

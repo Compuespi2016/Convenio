@@ -18,7 +18,7 @@
 </head>
 <body>
 	<?php require('include/topo.php')?>
-    <p>Bem Vindo(a) <?php echo $dados['nome']; ?></p>
+    <p id="bemvindo">Bem Vindo(a), <?php echo $dados['nome']; ?></p>
     <div id="menu">
         <a href="formularios/vincular_aluno.php">Vincular Aluno</a>
         <a href="lista_vinculo_professor.php">Lista de Alunos Vinculados</a>

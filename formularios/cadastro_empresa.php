@@ -1,6 +1,9 @@
 <?php
 include_once('../db/conexao.php');
 	if(isset($_POST['nome'])){
+		$erro = false;
+		
+
 		$nomemp = $_POST['nome'];
 		$senha = $_POST['senha'];
 		$confirmar_senha = $_POST['confirmarsenha'];
@@ -13,27 +16,51 @@ include_once('../db/conexao.php');
 		$email = $_POST['email'];
 		$nomeresp = $_POST['dono'];
 
-		$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ( '$nomemp','$senha','$cnpj','$cpf', '$ramo', '$enderecoemp', '$telefonemp', '$telefonedon', '$email', '$nomeresp' )";
-		if($confirmar_senha == $senha){
-			
-			if(mysqli_query($conecta,$query)){
-				session_start();
-				$_SESSION['id'] = mysqli_insert_id($conecta);
-				$id_empresa = mysqli_insert_id($conecta);
-				//header('location: cadastro_empresa.php?id='.$id_empresa);
+		if($nomemp == ''){
+			echo "<script>alert('informe a Razão Social')</script>";
+		}elseif ($ramo == '') {
+			echo "<script>alert('informe o ramo da empresa')</script>";
+		}elseif ($cnpj == '') {
+			echo "<script>alert('informe o CNPJ da empresa')</script>";
+		}elseif ($enderecoemp == '') {
+			echo "<script>alert('informe o endereço da empresa')</script>";
+		}elseif ($telefonemp == '') {
+			echo "<script>alert('informe o telefone da empresa')</script>";
+		}elseif ($nomeresp == '') {
+			echo "<script>alert('informe o nome do responsável')</script>";
+		}elseif ($cpf == '') {
+			echo "<script>alert('informe o CPF do responsável da empresa')</script>";
+		}elseif ($email == '') {
+			echo "<script>alert('informe o email do responsável')</script>";
+		}elseif ($telefonedon == '') {
+			echo "<script>alert('informe o telefone do responsavel da empresa')</script>";
+		}elseif ($senha == '') {
+			echo "<script>alert('informe uma senha')</script>";
+		}elseif ($confirmar_senha == '') {
+			echo "<script>alert('é necessário confirmação de senha')</script>";
+		}else{
+
+			$query = "INSERT INTO user_empresa (nome , senha, cnpj, cpf, ramo,endereco,telefone,telefone_dono,email,dono) VALUES ( '$nomemp','$senha','$cnpj','$cpf', '$ramo', '$enderecoemp', '$telefonemp', '$telefonedon', '$email', '$nomeresp' )";
+			if($confirmar_senha == $senha){
+				
+				if(mysqli_query($conecta,$query)){
+					session_start();
+					$_SESSION['id'] = mysqli_insert_id($conecta);
+					$id_empresa = mysqli_insert_id($conecta);
+					//header('location: cadastro_empresa.php?id='.$id_empresa);
 ?>
 			<!--<script>alert('O id: <?php echo $id_empresa; ?> deverá ser utilizado para login')</script>-->
 <?php
 				header('location: ../popup.php?id='.$id_empresa);
 				//header('location: ../home_empresa.php?id='.$id_empresa);
+				}
+				else{
+					
+					echo mysqli_error($conecta);
+				}
+			}else{
+				echo "<script>alert('Campo senha diferente de confirmar senha')</script>";
 			}
-			else{
-				
-				echo mysqli_error($conecta);
-				echo "<script>loginfailed()</script>";
-			}
-		}else{
-			echo "<script>alert('Campo senha diferente de confirmar senha')</script>";
 		}
 	}
 
@@ -75,7 +102,7 @@ include_once('../db/conexao.php');
 		
 		<input type="text" name="ramo" maxlength=50 placeholder="Ramo">
 
-		<input type="text" name="cnpj" placeholder="CNPJ" onkeypress="retirarFormatacao(this);" onblur="formatarCampo(this);" maxlength="14"/>
+		<input type="text" name="cnpj" placeholder="CNPJ" onblur="formatarCampo(this);" minlength="14" maxlength="14"/>
 		
 		<input type="text" name="endereco" maxlength=50 placeholder="Endereço da empresa">
 		
@@ -85,7 +112,7 @@ include_once('../db/conexao.php');
 		
 		<input type="text" name="dono" maxlength=50 placeholder="Nome do responsável">
 		
-		<input type="text" name="cpf" placeholder="CPF" onkeypress="retirarFormatacao(this);" onblur="formatarCampo(this);" maxlength="14"/>
+		<input type="text" name="cpf" placeholder="CPF" onblur="formatarCampo(this);" minlength="11" maxlength="11"/>
 
 		<input type="email" name="email" maxlength=40 placeholder="Email do responsável">
 
@@ -93,7 +120,7 @@ include_once('../db/conexao.php');
 
 		<input type="password" name="senha" maxlength=20 placeholder="Senha">
 
-		<input type="password" name="confirmarsenha" maxlength=20 placeholder="Confirmar senha">
+		<input type="password" name="confirmarsenha" minlength="4" maxlength=20 placeholder="Confirmar senha">
 		
 		<div id="divisao"></div>
 
