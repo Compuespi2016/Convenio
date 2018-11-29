@@ -26,6 +26,7 @@ if(isset($_GET['atualizado'])){
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+	<link href="/convenio/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
 	<title>Frequência</title>
@@ -44,7 +45,7 @@ if(isset($_GET['atualizado'])){
 		
 	</div>
 	<div id="tabela">
-		<table>
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th>Nome do aluno</th>

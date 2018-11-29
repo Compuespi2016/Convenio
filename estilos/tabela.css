@@ -24,6 +24,7 @@ th{
     border-bottom:1px solid #3498db;
     margin-bottom:5px;
     padding:10px;
+    font-weight: bold;
 }
 a#blue{
     color:#3498db;
