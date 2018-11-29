@@ -8,7 +8,7 @@ if(!isset($_SESSION['id'])) {
 	
 }
 $id = $_SESSION['id'];
-$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,vinculo.motivo motivo,vinculo.motivo_freq,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND professor.id = '$id' ";
+$query = "SELECT vinculo.id id_vinculo,vinculo.data,vinculo.status status,vinculo.motivo motivo,vinculo.motivo_freq,aluno.nome nome_aluno,professor.nome nome_professor,user_empresa.nome nome_empresa,vinculo.plano_id,vinculo.aluno_id FROM user_empresa,vinculo,aluno,professor WHERE user_empresa.id = vinculo.empresa_id AND aluno.id = vinculo.aluno_id AND professor.id = vinculo.professor_id AND professor.id = '$id' ";
 $data = mysqli_query($conecta,$query);
 if(!$data){
 	echo mysqli_error($conecta);
@@ -64,6 +64,11 @@ if(!$data){
 					<?php } ?>
 					<td style="text-align:center"> <?php echo $dados['motivo']; ?></td>
 					<td style="text-align:center"> <?php echo $dados['motivo_freq']; ?></td>
+					<?php if($dados['plano_id'] != 0){ ?>
+						<td style="text-align:center"> <a href="plano_estagio.php?id=<?php echo $dados['aluno_id'] ?>"><img src="imgs/lista.png" style="width:32px;height:32px"></a></td>
+					<?php }else{ ?>
+						<td style="text-align:center"><img src="imgs/no.png" style="width:32px;height:32px"></td>
+					<?php } ?>
 				</tr>
 <?php
 	}
