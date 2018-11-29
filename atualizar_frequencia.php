@@ -39,7 +39,7 @@ if(isset($_POST['presencas'])){
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
 		<?php if($_SESSION['nivel'] == 3){ ?>
-			<a href="frequecia.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Frequência ></a>
+			<a href="frequencia.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Frequência ></a>
 		<?php } ?>
 		<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
