@@ -37,7 +37,7 @@ include_once('db/conexao.php');
 		<input type="text" name="matricula" placeholder="Matricula" maxlength="6">
 		<input type="password" name="senha" placeholder="Senha" maxlength="30">
 		<div id="divisao_login"></div>
-		<input type="submit" value="Logar">
+		<input id="submit" type="submit" value="Logar">
 	</form>	
 </body>
 </html>

@@ -18,6 +18,8 @@ if($data === FALSE){
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+    <link href="/convenio/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="/convenio/bootstrap/bootstrap.js"></script>
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
 	<title>Alunos Vinculados</title>
@@ -29,14 +31,13 @@ if($data === FALSE){
 		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
-		<table>
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th>Aluno</th>
 					<th>Empresa</th>
 					<th>Professor</th>
 					<th>Data</th>
-
 				</tr>
 			</thead>
 			<tbody>

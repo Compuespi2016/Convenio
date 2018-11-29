@@ -1,6 +1,8 @@
 body{
 	margin:0px;
-	padding-bottom:100px;
+	background-color: #f9f9f9;
+	display:flex;
+	flex-direction: column;
 }
 header{
 	position:relative;
@@ -9,6 +11,7 @@ header{
 	width:100%;
 	height:auto;
 	margin-bottom:10px;
+	background-color:white;
 }
 #topo{
 	display:inline-block;
@@ -24,10 +27,10 @@ header{
 }
 #titulo{
 	flex-direction: column;
-	background-color:#2268b2;
-	padding-top:20px;
-	padding-bottom:20px;
-	height:120px;
+	background-color:#2196F3;
+	padding-top:10px;
+	padding-bottom:10px;
+	height:100px;
 }
 #titulo p#setor{
 	color:white;

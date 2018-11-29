@@ -9,15 +9,16 @@ div#setores a{
 	padding-left:35px;
 	padding-top:20px;
 	padding-bottom:20px;
-	background-color: #2268b2;
+	background-color: #2196F3;
 	color:white;
-	font-size:25px;
+	font-size:22px;
 	font-weight: bold;
 	text-decoration: none;
 	margin-left:10px;
 	margin-right:10px;
 	margin-bottom:30px;
 	width:100px;
+	box-shadow: 3px 3px rgba(0,0,0,.5);
 }
 
 div#setores a:hover{
@@ -41,23 +42,24 @@ div#cadastrar{
 	color:#2268b2;
 	font-size:14px;
 	align-self: center;
-	padding:5px;
+	padding-bottom:10px;
 	width:100%;
-	border-bottom: 1px solid #2268b2;
 	text-align: center;
-
+	margin-top: 30px;
 }
 div#cadastrar a{
 	text-decoration: none;
-	color:#2268b2;
+	color:#2196F3;
 }
 
 div#sec_title{
 	display:flex;
-	justify-content: center;
-	}
+	justify-content: flex-start;
+	margin-left:20px;
+	font-size:22px;
+}
 
 h2{
-    color: #1462BB;
+    color: #2196F3;
     font-weight: bold;
 }

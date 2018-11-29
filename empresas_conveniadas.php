@@ -25,7 +25,6 @@ if($data === FALSE){
 <body>
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
-	<!--	<a href="empresas_conveniadas.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Empresas conveniadas ></a> -->
 		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
