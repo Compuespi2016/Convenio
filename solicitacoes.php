@@ -36,8 +36,8 @@ if($data === FALSE){
 					<th>Nome Empresa</th>
 					<th>Ramo</th>
 					<th>CNPJ</th>
-					<th>Dados da empresa<th>
-					<th>Visualizar cursos</th>
+					<th>Dados da empresa</th>
+					<th>Listar cursos</th>
 					<th>Aceitar</th>
 					<th>Recusar</th>
 				</tr>

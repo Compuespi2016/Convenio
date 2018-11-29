@@ -27,6 +27,15 @@ div#menu a:hover{
     background-color:black;
 }
 
+div#campos{
+    display:flex;
+    flex-direction: column;
+}
+
+div#campos a:hover{
+    background-color: black;
+}
+
 h2{
     color: #2196F3;
     font-weight: normal;
@@ -73,3 +82,4 @@ div#menu_preg div#menu_div1 p{
 div#menu_preg div#menu_div1 a:hover{
     background-color:black;
 }
+

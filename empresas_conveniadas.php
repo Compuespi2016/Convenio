@@ -18,6 +18,7 @@ if($data === FALSE){
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+	<link href="/convenio/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
 	<title>Empresas Conveniadas</title>
@@ -28,7 +29,7 @@ if($data === FALSE){
 		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
-		<table>
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th>Nome Empresa</th>
@@ -45,7 +46,7 @@ if($data === FALSE){
 				<tr>
 					<td style="text-align:center"> <?php echo $dados['nome'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['cnpj'];?> </td>
-					<td style="text-align:center"><a href="cancelar_convenio.php?id=<?php echo $dados['id']; ?>">Cancelar convênio</a></td>
+					<td style="text-align:center"><a href="cancelar_convenio.php?id=<?php echo $dados['id']; ?>"><img src="imgs/no.png" style="width:32px;height:32px"></a></td>
 				</tr>
 <?php
 	}

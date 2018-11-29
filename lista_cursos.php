@@ -21,6 +21,7 @@
 		<?php while($dados = mysqli_fetch_assoc($query)){ ?>
 				<li><?php echo utf8_encode($dados["nome"]) ?></li>
 		<?php } ?>
+		<li style="margin-top:20px"><a style="text-decoration:none;font-size:23px" href="solicitacoes.php">Voltar</a></li>
 	</ul>
 </body>
 </html>

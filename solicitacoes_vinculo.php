@@ -16,6 +16,7 @@ if($data === FALSE){
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
+	<link href="/convenio/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<link href="estilos/tabela.css" rel="stylesheet">
 	<title>Vínculo de aluno</title>
@@ -27,7 +28,7 @@ if($data === FALSE){
 		<a href="home_preg.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
 	</div>
 	<div id="tabela">
-		<table>
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th>Nome do aluno</th>
@@ -45,8 +46,8 @@ if($data === FALSE){
 					<td style="text-align:center"> <?php echo $dados['nome_aluno'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['nome_professor'];?> </td>
 					<td style="text-align:center"> <?php echo $dados['nome_empresa'];?> </td>
-					<td style="text-align:center"><a id="green" href="aceita_vinculo.php?id=<?php echo $dados['id_vinculo']; ?>">Aceitar</a></td>
-					<td style="text-align:center"><a id="red" href="recusa_vinculo.php?id=<?php echo $dados['id_vinculo']; ?>">Recusar</a></td>
+					<td style="text-align:center"><a id="green" href="aceita_vinculo.php?id=<?php echo $dados['id_vinculo']; ?>"><img src="imgs/ok.png" style="width:32px;height:32px"></a></td>
+					<td style="text-align:center"><a id="red" href="recusa_vinculo.php?id=<?php echo $dados['id_vinculo']; ?>"><img src="imgs/no.png" style="width:32px;height:32px"></a></td>
 				</tr>
 <?php
 		}
