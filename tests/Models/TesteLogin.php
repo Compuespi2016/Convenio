@@ -10,6 +10,9 @@ class ScriptsTestes extends TestCase
 {
 	public function Testemylife()
 	{
+		include_once 'login_preg.php';
+        $result = someFunction();
 
+        $this->assertEquals('expected result', $result);
 	} 
 }
