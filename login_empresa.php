@@ -47,7 +47,7 @@ include_once('db/conexao.php');
 	<?php require('include/topo.php') ?>
 	
 	<form id="login" action="login_empresa.php" method="POST">
-		<div id="titulo_divisao">Login empresa</div>
+		<div id="titulo_divisao">LOGIN EMPRESA</div>
 		<input type="text" name="id" placeholder="ID" maxlength="10">
 		<input type="password" name="senha" placeholder="Senha" maxlength="30">
 		<div id="divisao_login"></div>

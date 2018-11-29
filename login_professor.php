@@ -33,7 +33,7 @@ include_once('db/conexao.php');
 <body>
 	<?php require('include/topo.php') ?>
 	<form id="login" action="login_professor.php" method="POST">
-		<div id="titulo_divisao">Login Professor</div>
+		<div id="titulo_divisao">LOGIN PROFESSOR</div>
 		<input type="text" name="matricula" placeholder="Matricula" maxlength="6">
 		<input type="password" name="senha" placeholder="Senha" maxlength="30">
 		<div id="divisao_login"></div>
