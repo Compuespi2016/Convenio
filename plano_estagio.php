@@ -19,7 +19,10 @@
 		$dados_aluno = mysqli_query($conecta,$dados_aluno);
 		$dados_aluno = mysqli_fetch_assoc($dados_aluno);
 
-		$dados_vinculo = "SELECT * FROM plano_estagio WHERE aluno_id=".$_POST['id_aluno']." AND empresa_id=".$_SESSION['id'];
+		$dados_vinculo = "SELECT * FROM plano_estagio WHERE aluno_id=".$_POST['id_aluno'];
+		if($_SESSION['nivel'] == 3){
+			$dados_vinculo .= " AND empresa_id=".$_SESSION['id'];
+		}
 		$dados_vinculo = mysqli_query($conecta,$dados_vinculo);
 		$dados_vinculo = mysqli_fetch_assoc($dados_vinculo);
 	}
@@ -30,7 +33,10 @@
 		$dados_aluno = mysqli_query($conecta,$dados_aluno);
 		$dados_aluno = mysqli_fetch_assoc($dados_aluno);
 
-		$dados_vinculo = "SELECT * FROM plano_estagio WHERE aluno_id=".$_GET['id']." AND empresa_id=".$_SESSION['id'];
+		$dados_vinculo = "SELECT * FROM plano_estagio WHERE aluno_id=".$_GET['id'];
+		if($_SESSION['nivel'] == 3){
+			$dados_vinculo .= " AND empresa_id=".$_SESSION['id'];
+		}
 		$dados_vinculo = mysqli_query($conecta,$dados_vinculo);
 		$dados_vinculo = mysqli_fetch_assoc($dados_vinculo);
 	}
