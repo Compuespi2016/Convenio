@@ -16,6 +16,10 @@ session_start();
 		$dados_aluno = "SELECT * FROM aluno WHERE id=".$dados_aluno;
 		$dados_aluno = mysqli_query($conecta,$dados_aluno);
 		$dados_aluno = mysqli_fetch_assoc($dados_aluno);
+
+		if($updateplano_id){
+			header('location: ../frequencia.php?msg=Plano+registrado');
+		}
 	}
 	if(isset($_GET['id_aluno'])){
 		$dados_aluno = $_GET["id_aluno"];

@@ -19,6 +19,9 @@ if($data === FALSE){
 if(isset($_GET['atualizado'])){
 	echo "<script>alert('Registro atualizado')</script>";
 }
+if(isset($_GET['msg'])){
+	echo "<script>alert('Plano de estágio criado')</script>";
+}
 
 ?>
 
