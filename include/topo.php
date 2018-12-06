@@ -10,5 +10,6 @@
     <div id="titulo">
         <p id="setor">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</p>
         <p id="convenio_estagio">CONVÊNIOS DE ESTÁGIO</p>
+        <p id="convenio_estagio"><a href="/convenio/index.php"><img src="/convenio/imgs/home.png" style="width:25px;height:25px;margin-right:10px"/></a><a style="text-decoration:none;color:white" href="/convenio/index.php">Início</a></p>
     </div>
 </header>

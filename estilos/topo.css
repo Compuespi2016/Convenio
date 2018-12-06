@@ -31,7 +31,7 @@ header{
 	background-color:#2196F3;
 	padding-top:10px;
 	padding-bottom:10px;
-	height:100px;
+	height:150px;
 }
 #titulo p#setor{
 	color:white;
@@ -42,6 +42,12 @@ header{
 	font-weight: bold;
 
 }
+#convenio_estagio{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #titulo p#convenio_estagio{
 	color:white;
 	font-size:17px;
@@ -50,6 +56,8 @@ header{
 	text-align: left;
 	font-weight: bold;
 }
+
+
 
 div#menu_left{
 	display:flex;
