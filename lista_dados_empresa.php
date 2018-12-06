@@ -19,13 +19,13 @@
 <body>
     <?php require('include/topo.php') ?>
 	<ul id="cursos">
-        <li>Nome da empresa: <?php echo ($dados["nome"]) ?></li>
+        <li>Razão Social: <?php echo ($dados["nome"]) ?></li>
         <li>CNPJ: <?php echo ($dados["cnpj"]) ?></li>
         <li>Ramo: <?php echo ($dados["ramo"]) ?></li>
         <li>Endereço: <?php echo ($dados["endereco"]) ?></li>
         <li>Telefone: <?php echo ($dados["telefone_dono"]) ?></li>
         <li>Email: <?php echo ($dados["email"]) ?></li>
-        <li>Dono: <?php echo ($dados["dono"]) ?></li>
+        <li>Responsável: <?php echo ($dados["dono"]) ?></li>
         <li style="margin-top:20px"><a style="text-decoration:none;font-size:23px" href="solicitacoes.php">Voltar</a></li>
 	</ul>
 </body>
