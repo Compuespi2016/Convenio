@@ -97,32 +97,41 @@ include_once('../db/conexao.php');
 	<form id="cadastro" action="cadastro_empresa.php" method="POST">
 		<div id="titulo_divisao">Cadastro de empresa</div>
 		<div id="divisao">Dados da empresa</div>
-
+		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Razão Social</label>
 		<input type="text" name="nome" maxlength=50 placeholder="Razão Social">
 		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Ramo</label>
 		<input type="text" name="ramo" maxlength=50 placeholder="Ramo">
 
+		<label style="color:rgba(0,0,0,.8);font-size:20px">CNPJ</label>
 		<input type="text" name="cnpj" placeholder="CNPJ" onblur="formatarCampo(this);" minlength="14" maxlength="14"/>
 		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Endereço da empresa</label>
 		<input type="text" name="endereco" maxlength=50 placeholder="Endereço da empresa">
 		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Telefone da empresa</label>
 		<input type="text" name="telefone" maxlength=11 placeholder="Telefone da empresa">
 
 		<div id="divisao">Dados do responsável</div>
 		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Nome do responsável</label>
 		<input type="text" name="dono" maxlength=50 placeholder="Nome do responsável">
 		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">CPF</label>
 		<input type="text" name="cpf" placeholder="CPF" onblur="formatarCampo(this);" minlength="11" maxlength="11"/>
 
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Email do responsável</label>
 		<input type="email" name="email" maxlength=40 placeholder="Email do responsável">
 
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Telefone para contato</label>
 		<input type="text" name="telefone_dono" maxlength=11 placeholder="Telefone para contato">
-
-		<input type="password" name="senha" maxlength=20 placeholder="Senha">
-
-		<input type="password" name="confirmarsenha" minlength="4" maxlength=20 placeholder="Confirmar senha">
 		
-		<div id="divisao"></div>
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Senha</label>
+		<input type="password" name="senha" maxlength=20 placeholder="Senha">
+		
+		<label style="color:rgba(0,0,0,.8);font-size:20px">Confirmar senha</label>
+		<input type="password" name="confirmarsenha" minlength="4" maxlength=20 placeholder="Confirmar senha">
 
 		<button type="submit">Cadastrar</button>
 	</form>

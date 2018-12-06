@@ -33,7 +33,7 @@
 		<form id="checkboxs" action="cadastro_convenio.php" method="POST">
 			<div id="check">
 				<p style="text-align:center">Cadastro de convênio</p>
-				<p style="text-align:left"> <font size="4">Selecione os cursos de interesse para estágio: </font> </p><br>
+				<p style="text-align:left">Selecione os cursos de interesse para estágio:</p><br>
 				<?php while($dados = mysqli_fetch_assoc($query)) { ?>
 					<?php
 						$id = $dados["id"];

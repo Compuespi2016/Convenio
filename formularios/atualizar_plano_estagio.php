@@ -54,7 +54,7 @@ session_start();
 <body>
 	<?php require('../include/topo.php') ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
-		<a href="../frequencia.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+		<a href="../frequencia.php"><img src="../imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
 	</div>
 	<form id="cadastro" action="atualizar_plano_estagio.php" method="POST">
 		<div id="titulo_divisao">Atualizar plano de estágio</div>

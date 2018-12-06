@@ -35,12 +35,12 @@ if(isset($_GET['atualizado'])){
 	<?php require('include/topo.php'); ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
 		<?php if($_SESSION['nivel'] == 2){ ?>
-			<a href="lista_vinculo_professor.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Alunos Vinculados ></a>
+			<a href="lista_vinculo_professor.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Alunos Vinculados</a>
 		<?php } ?>
 		<?php if($_SESSION['nivel'] == 2){ ?>
-				<a href="home_professor.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+				<a href="home_professor.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
 		<?php }else{ ?>
-				<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+				<a href="home_empresa.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
 		<?php } ?>
 		
 	</div>

@@ -50,3 +50,25 @@ header{
 	text-align: left;
 	font-weight: bold;
 }
+
+div#menu_left{
+	display:flex;
+	flex-direction: column;
+	align-self:flex-end;
+}
+
+div#menu_left a{
+	width:200px;
+	height:50px;
+	color:white;
+	text-decoration:none;
+	padding:5px;
+	background-color:#2196F3;
+	position:relative;
+	text-align:center;
+	margin-top:5px;
+}
+
+div#menu_left img{
+	margin-right:10px;
+}

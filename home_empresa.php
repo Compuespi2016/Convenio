@@ -38,6 +38,7 @@
     <br>
     <h2> Bem Vindo(a) <?php echo $dados_empresa['nome']; ?></h2>
     <div id="menu">
+    <div id="campos">
         <?php if($dados_empresa["recusado"] == 'vazio'){ ?>
                 <a href="formularios/cadastro_convenio.php">Solicitação de convênio</a>
         <?php }elseif($dados_empresa["recusado"] == 'sim'){ ?>
@@ -50,7 +51,7 @@
             <p><?php echo $dados_empresa["motivo"]; ?></p>
         <?php } ?>
         
-        <div id="campos">
+        
             <a href="frequencia.php">Frequencia Aluno</a>
             <a href="include/logout.php">Sair</a>
             <?php if($dados_empresa["recusado"] == 'nao'){ ?>

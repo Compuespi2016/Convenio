@@ -41,7 +41,7 @@
 <head>
 	<title>Plano de estágio</title>
 	<link href="estilos/popup.css" rel="stylesheet">
-	<link href="estilos/cadastro.css" rel="stylesheet">
+	<link href="estilos/plano.css" rel="stylesheet">
 	<link href="estilos/topo.css" rel="stylesheet">
 	<script>
 		function validanota(elem){
@@ -54,26 +54,26 @@
 <body>
 	<?php require('include/topo.php') ?>
 	<div id="menu_left" style="display:flex;flex-direction:column;">
-		<a href="frequencia.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+		<a href="frequencia.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
 	</div>
-    <form id="cadastro" action="plano_estagio.php" method="POST">
-        <div id="titulo_divisao">Plano de estágio</div>
-        <p style="color:white;font-size: 20px;font-weight: 200">Aluno(a): <?php echo $dados_aluno["nome"]; ?></p>
+    <form id="vincular" action="plano_estagio.php" method="POST">
+        <div id="titulo_divisao" style="width:350px">Plano de estágio</div>
+        <p style="font-size:22px">Aluno(a): <?php echo $dados_aluno["nome"]; ?></p>
 
         <?php $id = isset($_GET['id']) ? $_GET['id'] : $_POST['id_aluno']; ?>
 		<input type="hidden" name="id_aluno" value="<?php echo $id ?>">
 
-        <label for="plano" style="color:white">Plano de estágio</label>
+        <label for="plano">Plano de estágio</label>
         <p name="plano"><?php echo $dados_vinculo['plano']; ?></p>
 
-        <label for="avaliacao" style="color:white">Avaliação</label>
+        <label for="avaliacao">Avaliação</label>
         <p name="avaliacao"><?php echo $dados_vinculo['avaliacao']; ?></p>
 
-        <label for="nota" style="color:white">Nota</label>
+        <label for="nota">Nota</label>
         <input type="number" name="nota" min=0 max=10 maxlength=4 value="<?php echo $dados_vinculo['nota']; ?>" onchange="validanota(this)">
 
-        <label for="comentario" style="color:white">Comentário</label>
-        <input type="text" name="comentario" value="<?php echo $dados_vinculo['comentario']; ?>"/>
+        <label for="comentario">Comentário</label>
+        <textarea type="text" name="comentario"><?php echo $dados_vinculo['comentario']; ?></textarea>
         
         <div id="divisao"></div>
         

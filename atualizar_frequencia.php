@@ -41,7 +41,7 @@ if(isset($_POST['presencas'])){
 		<?php if($_SESSION['nivel'] == 3){ ?>
 			<a href="frequencia.php" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Frequência ></a>
 		<?php } ?>
-		<a href="home_empresa.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+		<a href="home_empresa.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
 	</div>
 	<h1>Aluno: <?php echo $dados_aluno['nome_aluno']; ?></h1>
 	<form action="atualizar_frequencia.php?id=<?php echo $_GET['id']; ?>" method="POST">
