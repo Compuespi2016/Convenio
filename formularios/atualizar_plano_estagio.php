@@ -7,7 +7,7 @@ session_start();
 		$plano = $_POST["plano"];
 		$avaliacao = $_POST["avaliacao"];
 		
-		echo $updateplano_id = "UPDATE plano_estagio SET aluno_id=".$id_aluno.",empresa_id=".$id_empresa. ",plano= '$plano',avaliacao='$avaliacao' WHERE aluno_id=".$id_aluno;
+		$updateplano_id = "UPDATE plano_estagio SET aluno_id=".$id_aluno.",empresa_id=".$id_empresa. ",plano= '$plano',avaliacao='$avaliacao' WHERE aluno_id=".$id_aluno;
 		$updateplano_id = mysqli_query($conecta,$updateplano_id);
 
 		if(!$updateplano_id){

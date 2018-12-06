@@ -27,8 +27,9 @@
 
 
         $query = "INSERT INTO vinculo (aluno_id,empresa_id,professor_id,data,status) VALUES (".$id_aluno.",".$id_empresa.",".$id_professor.","."SYSDATE(),'pendente')";
-        echo $query;
-        //$query = mysqli_query($conecta,$query);
+        #echo $query;
+        echo mysqli_error($conecta);
+        $query = mysqli_query($conecta,$query);
         //if($query){
         //    header('location: ../home_professor.php?cadastro=true');
         //}else{

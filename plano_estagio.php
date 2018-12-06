@@ -2,10 +2,10 @@
     include_once('db/conexao.php');
     session_start();
     
-    if(isset($_POST['id_aluno'])){
+    if(isset($_POST["id_aluno"])){
 		$id_aluno = $_POST["id_aluno"];
         $nota = $_POST["nota"];
-        $comentario = $_POST['comentario'];
+        $comentario = $_POST["comentario"];
 		
 		$updateplano = "UPDATE plano_estagio SET comentario='$comentario',nota=".$nota." WHERE aluno_id=".$id_aluno;
 		$updateplano = mysqli_query($conecta,$updateplano);
@@ -24,7 +24,7 @@
 		$dados_vinculo = mysqli_fetch_assoc($dados_vinculo);
 	}
 
-	if(isset($_GET['id'])){
+	if(isset($_GET["id"])){
 		$dados_aluno = $_GET["id"];
 		$dados_aluno = "SELECT * FROM aluno WHERE id=".$dados_aluno;
 		$dados_aluno = mysqli_query($conecta,$dados_aluno);
@@ -64,10 +64,10 @@
 		<input type="hidden" name="id_aluno" value="<?php echo $id ?>">
 
         <label for="plano" style="color:white">Plano de estágio</label>
-        <p name="plano"><?php echo $dados_vinculo['plano']; ?></p>
+        <textarea type="text" cols="40" name="plano" maxlength=535><?php echo $dados_vinculo["plano"]; ?></textarea>
 
         <label for="avaliacao" style="color:white">Avaliação</label>
-        <p name="avaliacao"><?php echo $dados_vinculo['avaliacao']; ?></p>
+        <textarea type="text" cols="40" name="avaliacao" maxlength=535><?php echo $dados_vinculo["avaliacao"]; ?></textarea>
 
         <label for="nota" style="color:white">Nota</label>
         <input type="number" name="nota" min=0 max=10 maxlength=4 value="<?php echo $dados_vinculo['nota']; ?>" onchange="validanota(this)">

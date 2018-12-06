@@ -12,6 +12,10 @@ session_start();
 		$updateplano_id = "UPDATE vinculo SET plano_id=".mysqli_insert_id($conecta)." WHERE aluno_id=".$id_aluno;
 		$updateplano_id = mysqli_query($conecta,$updateplano_id);
 
+		$dados_aluno = $_POST["id_aluno"];
+		$dados_aluno = "SELECT * FROM aluno WHERE id=".$dados_aluno;
+		$dados_aluno = mysqli_query($conecta,$dados_aluno);
+		$dados_aluno = mysqli_fetch_assoc($dados_aluno);
 	}
 	if(isset($_GET['id_aluno'])){
 		$dados_aluno = $_GET["id_aluno"];
