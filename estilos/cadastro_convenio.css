@@ -4,14 +4,15 @@ form#checkboxs{
 	height:auto;
 	overflow:visible;
 	padding:20px;
-	margin-left:35%;
+	justify-content: center;
+	align-self:center;
 	flex-direction: column;
 	align-items: flex-start;
 	padding:5px;
-	border:1px solid white;
+	border:1px solid rgba(0,0,0,.1);
 	border-radius:10px;
-	background-color:rgba(0,0,0,.5);
-	color:white;
+	background-color:#f9f9f9;
+	color:rgba(0,0,0,.9);
 }
 
 input[type="checkbox"]{
@@ -24,7 +25,7 @@ input[type="checkbox"]{
 }
 
 p#item{
-	color:white;
+	color:rgba(0,0,0,.9);
 	font-size:15px !important;
 	border-bottom:none !important;
 	display:inline !important;
@@ -33,11 +34,12 @@ p#item{
 input[type="submit"]{
 	margin-left:35%;
 	padding:20px;
-	background-color:#2268b2;
+	background-color:#2196F3;
 	border:none;
 	cursor:pointer;
 	margin-top:20px;
 	font-size:20px;
+	color:white;
 }
 
 input[type="submit"]:hover{
@@ -47,5 +49,5 @@ input[type="submit"]:hover{
 
 #check p{
 	font-size:25px;
-	color:white;
+	color:rgba(0,0,0,.9);
 }

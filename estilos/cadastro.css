@@ -10,12 +10,11 @@ form#cadastro{
 	flex-direction: column;
 	align-content: center;
 	width:550px;
-	margin-left:27%;
 	align-items: center;
 	padding:5px;
-	border: 1px solid black;
+	border: 1px solid rgba(0,0,0,.1);
 	border-radius:10px;
-	background-color:rgba(0,0,0,.7);
+	background-color:#f9f9f9;
 }
 
 input{
@@ -23,31 +22,33 @@ input{
 	border-right: none;
 	border-left: none;
 	border-top: none;
-	border-bottom: 1px solid #3498db;
-	margin-bottom:5px;
+	border-bottom: 1px solid rgba(0,0,0,.5);
+	margin-bottom:15px;
 	padding:10px;
-	color:white;
+	color:rgba(0,0,0,.9);
+	width:280px;
 
 }
 
 div#divisao{
-	border-bottom:1px solid white;
+	border-bottom:1px solid rgba(0,0,0,.7);
 	width:350px;
 	padding:5px;
 	margin-bottom: 20px;
-	font-size:17px;
-	color:white;
+	font-size:22px;
+	color:rgba(0,0,0,.9);
 }
 ::-webkit-input-placeholder {
    color: white;
 }
 
 button{
-	background-color:#2268b2;
+	background-color:#2196F3;
 	padding:20px;
 	color:white;
 	cursor:pointer;
 	border:none;
+	width:200px;
 }
 button:hover{
 	background-color:black;
@@ -60,9 +61,13 @@ div#titulo_divisao{
 	margin-bottom: 20px;
 	text-align:center;
 	font-size:25px;
-	color:white;
+	color:rgba(0,0,0,.9);
 }
 
 form#cadastro select{
 	margin-bottom:20px;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: white;
+  }

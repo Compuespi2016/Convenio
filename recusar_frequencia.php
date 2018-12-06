@@ -27,19 +27,21 @@ if(isset($_POST['motivo'])){
     <meta charset="utf-8">
     <link href="estilos/topo.css" rel="stylesheet">
     <link href="estilos/tabela.css" rel="stylesheet">
+    <link href="estilos/plano.css" rel="stylesheet">
     <title>Aprovar Frequencia</title>
 </head>
 <body>
     <?php require('include/topo.php'); ?>
-    <div id="menu_left" style="display:flex;flex-direction:column;">
-        <a href="#" style="text-align:start;width:150px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;margin-bottom:5px;">Alunos Vinculados ></a>
-        <a href="home_professor.php" style="text-align:start;width:100px;color:white;text-decoration:none;padding:5px;background-color:#2268b2;position:relative;">Voltar ></a>
+    <div id="menu_left">
+        <a href="alunos_vinculados.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Alunos Vinculados</a>
+        <a href="home_professor.php"><img src="imgs/back.png" style="width:28px;height:20px"/>Voltar</a>
     </div>
-    <h1>Aluno: <?php echo $dados_aluno['nome_aluno']; ?></h1>
-    <form action="recusar_frequencia.php?id=<?php echo $_GET['id']; ?>" method="POST">
+    
+    <form id="vincular" action="recusar_frequencia.php?id=<?php echo $_GET['id']; ?>" method="POST">
+        <p style="font-size:35px">Aluno: <?php echo $dados_aluno['nome_aluno']; ?></p>
         <label for="motivo">Motivo</label>
-        <input type="text" name="motivo" placeholder="Motivo" value="<?php echo $dados_aluno['motivo_freq']; ?>">
-        <button type="submit">Atualizar motivo</button>
+        <textarea type="text" name="motivo"><?php echo $dados_aluno['motivo_freq']; ?></textarea>
+        <button style="margin-top:20px" type="submit">Atualizar motivo</button>
     </form>
 </body>
 </html>

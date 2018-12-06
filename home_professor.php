@@ -20,11 +20,12 @@
 	<?php require('include/topo.php')?>
     <p id="bemvindo">Bem Vindo(a), <?php echo $dados['nome']; ?></p>
     <div id="menu">
-        <a href="formularios/vincular_aluno.php">Vincular Aluno</a>
-        <a href="lista_vinculo_professor.php">Lista de Alunos Vinculados</a>
-        <a href="frequencia.php">Frequencia de Alunos</a>
-        <a href="include/logout.php">Sair</a>
-
+        <div style="display:flex;flex-direction: column">    
+            <a href="formularios/vincular_aluno.php">Vincular Aluno</a>
+            <a href="lista_vinculo_professor.php">Lista de Alunos Vinculados</a>
+            <a href="frequencia.php">Frequencia de Alunos</a>
+            <a href="include/logout.php">Sair</a>
+        </div>
     </div>
 </body>
 </html>
